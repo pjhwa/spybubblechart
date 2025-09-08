@@ -1,0 +1,6 @@
+yfinance
+pandas
+plotly
+numpy
+requests
+tqdm

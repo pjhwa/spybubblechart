@@ -1,7 +1,7 @@
 import yfinance as yf
 import pandas as pd
 import plotly.express as px
-import plotly.graph_objects as go  # 개선: frames 사용을 위해 import 추가
+import plotly.graph_objects as go
 import numpy as np
 from datetime import datetime, timedelta
 import requests
@@ -43,51 +43,73 @@ def get_sp500_tickers():
 
 def download_data(tickers, start_date, end_date, interval='1d', chunksize=20):
     logging.info(f"Downloading price data for period {start_date} to {end_date} with interval {interval}")
-    cache_file = f'price_data_{start_date}_{end_date}_{interval}.pkl'
+    original_end_date = end_date  # 원래 end_date 저장
+    cache_file = f'price_data_{start_date}_{original_end_date}_{interval}.pkl'
     if os.path.exists(cache_file):
         logging.info(f"Loading price data from cache: {cache_file} (skipping download as cache exists for identical options)")
         with open(cache_file, 'rb') as f:
             data = pickle.load(f)
-        return data  # 캐시 존재 시 완전히 스킵
-    
-    # 캐시가 없을 때만 다운로드
-    data = pd.DataFrame()
-    current_date = datetime.now().strftime('%Y-%m-%d')
-    end_date = min(end_date, current_date)
-    
-    new_start = data.index.max().strftime('%Y-%m-%d') if not data.empty else start_date
-    if new_start >= end_date:
         return data
     
-    new_data_frames = []
-    for i in tqdm(range(0, len(tickers), chunksize), desc="Downloading new price data"):
-        chunk = tickers[i:i+chunksize]
-        logging.info(f"Processing chunk {i//chunksize + 1}/{len(tickers)//chunksize + 1}: {chunk}")
-        success = False
-        retries = 0
-        max_retries = 3
-        while not success and retries < max_retries:
-            try:
-                chunk_data = yf.download(chunk, start=new_start, end=end_date, interval=interval, progress=True, threads=False, auto_adjust=False)['Adj Close']
-                new_data_frames.append(chunk_data)
-                success = True
-            except Exception as e:
-                logging.error(f"Error in chunk {i//chunksize + 1} (retry {retries+1}/{max_retries}): {e}")
-                retries += 1
-                time.sleep(5 * retries)
-        if not success:
-            logging.warning(f"Failed to download chunk {i//chunksize + 1} after {max_retries} retries. Skipping...")
-        time.sleep(5)
+    max_attempts = 5  # 최대 5회 시도 (비거래일 조정)
+    attempts = 0
+    data = pd.DataFrame()
     
-    new_data = pd.concat(new_data_frames, axis=1).ffill().bfill()
-    data = pd.concat([data, new_data]).drop_duplicates()
+    while data.empty and attempts < max_attempts:
+        attempts += 1
+        current_date = datetime.now().strftime('%Y-%m-%d')
+        end_date = min(end_date, current_date)
+        
+        new_start = data.index.max().strftime('%Y-%m-%d') if not data.empty else start_date
+        if new_start >= end_date:
+            break
+        
+        new_data_frames = []
+        for i in tqdm(range(0, len(tickers), chunksize), desc="Downloading new price data"):
+            chunk = tickers[i:i+chunksize]
+            logging.info(f"Processing chunk {i//chunksize + 1}/{len(tickers)//chunksize + 1}: {chunk}")
+            success = False
+            retries = 0
+            max_retries = 3
+            while not success and retries < max_retries:
+                try:
+                    chunk_data = yf.download(chunk, start=new_start, end=end_date, interval=interval, progress=True, threads=False, auto_adjust=False)['Adj Close']
+                    new_data_frames.append(chunk_data)
+                    success = True
+                except Exception as e:
+                    logging.error(f"Error in chunk {i//chunksize + 1} (retry {retries+1}/{max_retries}): {e}")
+                    retries += 1
+                    time.sleep(5 * retries)
+            if not success:
+                logging.warning(f"Failed to download chunk {i//chunksize + 1} after {max_retries} retries. Skipping...")
+            time.sleep(5)
+        
+        new_data = pd.concat(new_data_frames, axis=1).ffill().bfill()
+        data = pd.concat([data, new_data]).drop_duplicates()
+        
+        if data.empty:
+            logging.warning(f"No data for end_date {end_date}. Finding nearest trading day using SPY ticker.")
+            # 개선: 'SPY' 티커로 최근 10일 데이터 다운로드하여 가장 최근 거래일 찾음
+            try:
+                spy_data = yf.download('SPY', start=(datetime.strptime(end_date, '%Y-%m-%d') - timedelta(days=10)).strftime('%Y-%m-%d'), end=end_date, interval=interval)['Adj Close']
+                if not spy_data.empty:
+                    nearest_trading_day = spy_data.index.max().strftime('%Y-%m-%d')
+                    logging.info(f"Adjusting end_date to nearest trading day: {nearest_trading_day}")
+                    end_date = nearest_trading_day
+                else:
+                    end_date = (datetime.strptime(end_date, '%Y-%m-%d') - timedelta(days=1)).strftime('%Y-%m-%d')
+            except Exception as e:
+                logging.error(f"Error finding trading day: {e}")
+                end_date = (datetime.strptime(end_date, '%Y-%m-%d') - timedelta(days=1)).strftime('%Y-%m-%d')
+    
     if data.empty:
-        logging.error("No valid data downloaded. Exiting.")
-        raise ValueError("No valid data downloaded.")
+        logging.error("No valid data downloaded after adjustments. Exiting.")
+        raise ValueError("No valid data downloaded after adjustments.")
+    
     data.index.name = 'Date'
     with open(cache_file, 'wb') as f:
         pickle.dump(data, f)
-    logging.info("Price data updated and cached.")
+    logging.info(f"Price data updated and cached for adjusted period (end_date: {end_date}).")
     return data
 
 def get_market_caps(tickers):
@@ -154,17 +176,17 @@ def create_bubble_chart(period='ytd', end_date=None):
         returns['x_pos'] = returns['Sector'].map(sector_positions) + returns['jitter']
         returns.loc[returns['Ticker'] == 'SPY', 'x_pos'] = -1
         
-        # 추가 개선: 버블 크기 차이 명확히 - 스케일링 15 -> 25로 증가, clip 3~80으로 조정
         min_market_cap = returns['MarketCap'].min()
-        returns['Size'] = np.sqrt(returns['MarketCap'] / min_market_cap) * 25  # 15 -> 25로 증가하여 크기 차이 강조
-        returns['Size'] = np.clip(returns['Size'], a_min=3, a_max=80)  # 최소 5->3, 최대 50->80으로 조정
+        returns['Size'] = np.sqrt(returns['MarketCap'] / min_market_cap) * 5 # bubble size
+        returns['Size'] = np.clip(returns['Size'], a_min=2, a_max=120)
         
-        logging.info("Adding labels for top market caps...")
+        logging.info("Starting to add labels for top market caps...")
         returns['Label'] = ''
         grouped = returns.groupby('Date')
-        for date, group in grouped:
+        for date, group in tqdm(grouped, desc="Adding labels for top market caps..."):
             top_mask = group['MarketCap'] > 5e11
             returns.loc[group.index[top_mask], 'Label'] = group.loc[top_mask, 'Ticker']
+        logging.info("Finished adding labels for top market caps.")
         
         dates = sorted(returns['Date'].unique())
         
@@ -180,9 +202,9 @@ def create_bubble_chart(period='ytd', end_date=None):
             marker=dict(size=df_first['Size'], color=df_first['Sector'].map(sector_colors), line=dict(width=1, color='black')),
             text=df_first['Label'],
             textposition='middle center',
-            textfont=dict(size=7),
-            hovertext=df_first['Ticker'],  # 추가 개선: hovertext로 Ticker 설정 (작은 버블에서도 hover 시 표시)
-            hovertemplate='Ticker: %{hovertext}<br>Return: %{y:.1f}%<br>Sector: %{marker.color}',  # 추가 개선: hovertemplate로 상세 표시
+            textfont=dict(size=10),
+            hovertext=df_first['Ticker'],
+            hovertemplate='Ticker: %{hovertext}<br>Return: %{y:.1f}%<br>Sector: %{marker.color}',
             name='Bubble'
         )])
         
@@ -206,9 +228,9 @@ def create_bubble_chart(period='ytd', end_date=None):
                     marker=dict(size=df_frame['Size'], color=df_frame['Sector'].map(sector_colors), line=dict(width=1, color='black')),
                     text=df_frame['Label'],
                     textposition='middle center',
-                    textfont=dict(size=7),
-                    hovertext=df_frame['Ticker'],  # 추가 개선: hovertext로 Ticker 설정
-                    hovertemplate='Ticker: %{hovertext}<br>Return: %{y:.1f}%<br>Sector: %{marker.color}'  # 추가 개선: hovertemplate로 상세 표시
+                    textfont=dict(size=10),
+                    hovertext=df_frame['Ticker'],
+                    hovertemplate='Ticker: %{hovertext}<br>Return: %{y:.1f}%<br>Sector: %{marker.color}'
                 )],
                 layout=go.Layout(title=frame_title),
                 name=str(date)
@@ -229,11 +251,10 @@ def create_bubble_chart(period='ytd', end_date=None):
                                             buttons=[dict(label='Play', method='animate', args=[None, dict(frame=dict(duration=300, redraw=True), transition=dict(duration=300), fromcurrent=True)]),
                                                      dict(label='Pause', method='animate', args=[[None], dict(frame=dict(duration=0, redraw=False), mode='immediate', transition=dict(duration=0))])])])
         
-        # 3단계 Market Cap 범례 (이전 개선 유지)
         cap_sizes = [3e12, 1e12, 5e11]
         cap_labels = ['3000Bn', '1000Bn', '500Bn']
         for i, cap in enumerate(cap_sizes):
-            radius = np.sqrt(cap / min_market_cap) * 25 / 2  # 스케일링과 맞춤
+            radius = np.sqrt(cap / min_market_cap) * 40 / 2
             fig.add_shape(type='circle', 
                           xref='x', yref='y',
                           x0=len(sector_positions) + i*1 - radius/100,
