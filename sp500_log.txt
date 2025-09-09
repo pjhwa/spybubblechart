@@ -1,0 +1,779 @@
+2025-09-08 17:34:29,182 - INFO - Starting create_bubble_chart...
+2025-09-08 17:34:29,182 - INFO - Starting to get S&P 500 tickers...
+2025-09-08 17:34:29,182 - INFO - Loading tickers from cache: sp500_tickers.pkl
+2025-09-08 17:34:29,183 - INFO - Starting to get market caps...
+2025-09-08 17:34:29,183 - INFO - Loading market caps from cache: market_caps.pkl
+2025-09-08 17:34:29,185 - INFO - Downloading price data for period 2025-09-07 to 2025-09-08 with interval 1m
+2025-09-08 17:34:29,196 - INFO - Processing chunk 1/26: ['MMM', 'AOS', 'ABT', 'ABBV', 'ACN', 'ADBE', 'AMD', 'AES', 'AFL', 'A', 'APD', 'ABNB', 'AKAM', 'ALB', 'ARE', 'ALGN', 'ALLE', 'LNT', 'ALL', 'GOOGL']
+2025-09-08 17:34:33,402 - ERROR - 
+20 Failed downloads:
+2025-09-08 17:34:33,403 - ERROR - ['ACN', 'A', 'GOOGL', 'APD', 'ABNB', 'AFL', 'ARE', 'AES', 'ALGN', 'ABBV', 'MMM', 'ALB', 'ABT', 'AOS', 'AKAM', 'ALLE', 'ALL', 'ADBE', 'LNT', 'AMD']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-08)')
+2025-09-08 17:34:38,416 - INFO - Processing chunk 2/26: ['GOOG', 'MO', 'AMZN', 'AMCR', 'AEE', 'AEP', 'AXP', 'AIG', 'AMT', 'AWK', 'AMP', 'AME', 'AMGN', 'APH', 'ADI', 'AON', 'APA', 'APP', 'APO', 'AAPL']
+2025-09-08 17:34:41,941 - ERROR - 
+20 Failed downloads:
+2025-09-08 17:34:41,941 - ERROR - ['ADI', 'AMT', 'AMCR', 'AON', 'APA', 'AMP', 'AEP', 'MO', 'APP', 'AXP', 'GOOG', 'AME', 'AMZN', 'AIG', 'AEE', 'AWK', 'AAPL', 'APH', 'AMGN', 'APO']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-08)')
+2025-09-08 17:34:46,947 - INFO - Processing chunk 3/26: ['AMAT', 'APTV', 'ACGL', 'ADM', 'ANET', 'AJG', 'AIZ', 'T', 'ATO', 'ADSK', 'ADP', 'AZO', 'AVB', 'AVY', 'AXON', 'BKR', 'BALL', 'BAC', 'BAX', 'BDX']
+2025-09-08 17:34:50,688 - ERROR - 
+20 Failed downloads:
+2025-09-08 17:34:50,688 - ERROR - ['AXON', 'BDX', 'AVB', 'AMAT', 'ATO', 'T', 'ADP', 'BKR', 'AIZ', 'BALL', 'AJG', 'BAC', 'AVY', 'ANET', 'ADSK', 'BAX', 'ADM', 'APTV', 'ACGL', 'AZO']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-08)')
+2025-09-08 17:34:55,692 - INFO - Processing chunk 4/26: ['BRK.B', 'BBY', 'TECH', 'BIIB', 'BLK', 'BX', 'XYZ', 'BK', 'BA', 'BKNG', 'BSX', 'BMY', 'AVGO', 'BR', 'BRO', 'BF.B', 'BLDR', 'BG', 'BXP', 'CHRW']
+2025-09-08 17:35:00,715 - ERROR - 
+20 Failed downloads:
+2025-09-08 17:35:00,715 - ERROR - ['BF.B', 'BLK', 'BR', 'BLDR', 'CHRW', 'BK', 'BA', 'BKNG', 'BSX', 'BRO', 'BBY', 'XYZ', 'AVGO', 'BIIB', 'BG', 'BX', 'BXP', 'BMY', 'TECH']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-08)')
+2025-09-08 17:35:00,715 - ERROR - ['BRK.B']: YFTzMissingError('possibly delisted; no timezone found')
+2025-09-08 17:35:05,722 - INFO - Processing chunk 5/26: ['CDNS', 'CPT', 'CPB', 'COF', 'CAH', 'KMX', 'CCL', 'CARR', 'CAT', 'CBOE', 'CBRE', 'CDW', 'COR', 'CNC', 'CNP', 'CF', 'CRL', 'SCHW', 'CHTR', 'CVX']
+2025-09-08 17:35:09,323 - ERROR - 
+20 Failed downloads:
+2025-09-08 17:35:09,323 - ERROR - ['CHTR', 'CNC', 'CARR', 'CBRE', 'COR', 'CNP', 'CDW', 'CCL', 'CVX', 'CPT', 'COF', 'CDNS', 'SCHW', 'CBOE', 'KMX', 'CF', 'CRL', 'CAH', 'CPB', 'CAT']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-08)')
+2025-09-08 17:35:14,332 - INFO - Processing chunk 6/26: ['CMG', 'CB', 'CHD', 'CI', 'CINF', 'CTAS', 'CSCO', 'C', 'CFG', 'CLX', 'CME', 'CMS', 'KO', 'CTSH', 'COIN', 'CL', 'CMCSA', 'CAG', 'COP', 'ED']
+2025-09-08 17:35:18,034 - ERROR - 
+20 Failed downloads:
+2025-09-08 17:35:18,034 - ERROR - ['CINF', 'COIN', 'CAG', 'ED', 'CTSH', 'CFG', 'CLX', 'C', 'CMS', 'CHD', 'KO', 'CMG', 'CI', 'COP', 'CME', 'CTAS', 'CSCO', 'CB', 'CL', 'CMCSA']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-08)')
+2025-09-08 17:35:23,038 - INFO - Processing chunk 7/26: ['STZ', 'CEG', 'COO', 'CPRT', 'GLW', 'CPAY', 'CTVA', 'CSGP', 'COST', 'CTRA', 'CRWD', 'CCI', 'CSX', 'CMI', 'CVS', 'DHR', 'DRI', 'DDOG', 'DVA', 'DAY']
+2025-09-08 17:35:26,574 - ERROR - 
+20 Failed downloads:
+2025-09-08 17:35:26,575 - ERROR - ['COST', 'COO', 'DRI', 'DVA', 'CMI', 'CRWD', 'CEG', 'CSX', 'CPAY', 'CCI', 'DHR', 'DAY', 'DDOG', 'GLW', 'CVS', 'CPRT', 'CTRA', 'STZ', 'CSGP', 'CTVA']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-08)')
+2025-09-08 17:35:31,578 - INFO - Processing chunk 8/26: ['DECK', 'DE', 'DELL', 'DAL', 'DVN', 'DXCM', 'FANG', 'DLR', 'DG', 'DLTR', 'D', 'DPZ', 'DASH', 'DOV', 'DOW', 'DHI', 'DTE', 'DUK', 'DD', 'EMN']
+2025-09-08 17:35:35,125 - ERROR - 
+20 Failed downloads:
+2025-09-08 17:35:35,125 - ERROR - ['FANG', 'DELL', 'DOV', 'DLR', 'DECK', 'DAL', 'EMN', 'DD', 'DXCM', 'DASH', 'DOW', 'DHI', 'DLTR', 'DVN', 'DG', 'DUK', 'DPZ', 'D', 'DE', 'DTE']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-08)')
+2025-09-08 17:35:40,134 - INFO - Processing chunk 9/26: ['ETN', 'EBAY', 'ECL', 'EIX', 'EW', 'EA', 'ELV', 'EME', 'EMR', 'ETR', 'EOG', 'EPAM', 'EQT', 'EFX', 'EQIX', 'EQR', 'ERIE', 'ESS', 'EL', 'EG']
+2025-09-08 17:35:43,644 - ERROR - 
+20 Failed downloads:
+2025-09-08 17:35:43,644 - ERROR - ['EIX', 'EFX', 'EQT', 'EOG', 'EQIX', 'EPAM', 'EW', 'ETR', 'EL', 'EMR', 'ECL', 'ESS', 'EQR', 'ELV', 'ETN', 'EA', 'ERIE', 'EME', 'EG', 'EBAY']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-08)')
+2025-09-08 17:35:48,648 - INFO - Processing chunk 10/26: ['EVRG', 'ES', 'EXC', 'EXE', 'EXPE', 'EXPD', 'EXR', 'XOM', 'FFIV', 'FDS', 'FICO', 'FAST', 'FRT', 'FDX', 'FIS', 'FITB', 'FSLR', 'FE', 'FI', 'F']
+2025-09-08 17:35:52,768 - ERROR - 
+20 Failed downloads:
+2025-09-08 17:35:52,768 - ERROR - ['EXR', 'FE', 'FFIV', 'FAST', 'EXC', 'FICO', 'FIS', 'XOM', 'FSLR', 'EXPD', 'EXPE', 'FDX', 'ES', 'F', 'EVRG', 'EXE', 'FRT', 'FITB', 'FDS', 'FI']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-08)')
+2025-09-08 17:35:57,777 - INFO - Processing chunk 11/26: ['FTNT', 'FTV', 'FOXA', 'FOX', 'BEN', 'FCX', 'GRMN', 'IT', 'GE', 'GEHC', 'GEV', 'GEN', 'GNRC', 'GD', 'GIS', 'GM', 'GPC', 'GILD', 'GPN', 'GL']
+2025-09-08 17:36:01,373 - ERROR - 
+20 Failed downloads:
+2025-09-08 17:36:01,373 - ERROR - ['GL', 'GILD', 'IT', 'GM', 'GPN', 'GEV', 'FOX', 'GPC', 'FCX', 'GEN', 'GRMN', 'FTNT', 'GIS', 'FOXA', 'GEHC', 'GD', 'GNRC', 'FTV', 'BEN', 'GE']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-08)')
+2025-09-08 17:36:06,381 - INFO - Processing chunk 12/26: ['GDDY', 'GS', 'HAL', 'HIG', 'HAS', 'HCA', 'DOC', 'HSIC', 'HSY', 'HPE', 'HLT', 'HOLX', 'HD', 'HON', 'HRL', 'HST', 'HWM', 'HPQ', 'HUBB', 'HUM']
+2025-09-08 17:36:10,001 - ERROR - 
+20 Failed downloads:
+2025-09-08 17:36:10,002 - ERROR - ['HAS', 'HST', 'DOC', 'HRL', 'HPQ', 'HON', 'HD', 'GS', 'HIG', 'HAL', 'GDDY', 'HUBB', 'HUM', 'HSY', 'HOLX', 'HWM', 'HSIC', 'HLT', 'HCA', 'HPE']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-08)')
+2025-09-08 17:36:15,006 - INFO - Processing chunk 13/26: ['HBAN', 'HII', 'IBM', 'IEX', 'IDXX', 'ITW', 'INCY', 'IR', 'PODD', 'INTC', 'IBKR', 'ICE', 'IFF', 'IP', 'IPG', 'INTU', 'ISRG', 'IVZ', 'INVH', 'IQV']
+2025-09-08 17:36:18,683 - ERROR - 
+20 Failed downloads:
+2025-09-08 17:36:18,683 - ERROR - ['INTU', 'IDXX', 'IBKR', 'INVH', 'ISRG', 'IVZ', 'IBM', 'HII', 'PODD', 'IEX', 'IP', 'IQV', 'INCY', 'IR', 'INTC', 'IFF', 'HBAN', 'ICE', 'IPG', 'ITW']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-08)')
+2025-09-08 17:36:23,687 - INFO - Processing chunk 14/26: ['IRM', 'JBHT', 'JBL', 'JKHY', 'J', 'JNJ', 'JCI', 'JPM', 'K', 'KVUE', 'KDP', 'KEY', 'KEYS', 'KMB', 'KIM', 'KMI', 'KKR', 'KLAC', 'KHC', 'KR']
+2025-09-08 17:36:27,234 - ERROR - 
+20 Failed downloads:
+2025-09-08 17:36:27,235 - ERROR - ['JPM', 'KMB', 'KLAC', 'IRM', 'KEYS', 'KIM', 'JKHY', 'J', 'KEY', 'KR', 'JNJ', 'KDP', 'KVUE', 'JBHT', 'KKR', 'JCI', 'JBL', 'K', 'KMI', 'KHC']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-08)')
+2025-09-08 17:36:32,244 - INFO - Processing chunk 15/26: ['LHX', 'LH', 'LRCX', 'LW', 'LVS', 'LDOS', 'LEN', 'LII', 'LLY', 'LIN', 'LYV', 'LKQ', 'LMT', 'L', 'LOW', 'LULU', 'LYB', 'MTB', 'MPC', 'MAR']
+2025-09-08 17:36:35,810 - ERROR - 
+20 Failed downloads:
+2025-09-08 17:36:35,811 - ERROR - ['LLY', 'LULU', 'LMT', 'LOW', 'LH', 'LIN', 'MAR', 'LW', 'L', 'LYV', 'LVS', 'MTB', 'LII', 'LHX', 'LYB', 'LKQ', 'LRCX', 'LEN', 'LDOS', 'MPC']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-08)')
+2025-09-08 17:36:40,814 - INFO - Processing chunk 16/26: ['MMC', 'MLM', 'MAS', 'MA', 'MTCH', 'MKC', 'MCD', 'MCK', 'MDT', 'MRK', 'META', 'MET', 'MTD', 'MGM', 'MCHP', 'MU', 'MSFT', 'MAA', 'MRNA', 'MHK']
+2025-09-08 17:36:44,314 - ERROR - 
+20 Failed downloads:
+2025-09-08 17:36:44,314 - ERROR - ['MMC', 'MCK', 'MCD', 'MHK', 'MKC', 'MDT', 'MGM', 'MLM', 'MTD', 'META', 'MET', 'MSFT', 'MA', 'MRNA', 'MCHP', 'MAA', 'MAS', 'MU', 'MRK', 'MTCH']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-08)')
+2025-09-08 17:36:49,322 - INFO - Processing chunk 17/26: ['MOH', 'TAP', 'MDLZ', 'MPWR', 'MNST', 'MCO', 'MS', 'MOS', 'MSI', 'MSCI', 'NDAQ', 'NTAP', 'NFLX', 'NEM', 'NWSA', 'NWS', 'NEE', 'NKE', 'NI', 'NDSN']
+2025-09-08 17:36:52,994 - ERROR - 
+20 Failed downloads:
+2025-09-08 17:36:52,995 - ERROR - ['MPWR', 'NDAQ', 'MSI', 'NEE', 'MNST', 'NI', 'MDLZ', 'NWSA', 'MS', 'NKE', 'NWS', 'MOS', 'NTAP', 'NEM', 'MSCI', 'MCO', 'NFLX', 'MOH', 'NDSN', 'TAP']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-08)')
+2025-09-08 17:36:58,006 - INFO - Processing chunk 18/26: ['NSC', 'NTRS', 'NOC', 'NCLH', 'NRG', 'NUE', 'NVDA', 'NVR', 'NXPI', 'ORLY', 'OXY', 'ODFL', 'OMC', 'ON', 'OKE', 'ORCL', 'OTIS', 'PCAR', 'PKG', 'PLTR']
+2025-09-08 17:37:01,538 - ERROR - 
+20 Failed downloads:
+2025-09-08 17:37:01,538 - ERROR - ['NRG', 'ON', 'ODFL', 'PKG', 'NUE', 'PCAR', 'OXY', 'ORLY', 'OTIS', 'NVR', 'OKE', 'NXPI', 'NTRS', 'OMC', 'NOC', 'NCLH', 'NSC', 'NVDA', 'PLTR', 'ORCL']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-08)')
+2025-09-08 17:37:06,542 - INFO - Processing chunk 19/26: ['PANW', 'PSKY', 'PH', 'PAYX', 'PAYC', 'PYPL', 'PNR', 'PEP', 'PFE', 'PCG', 'PM', 'PSX', 'PNW', 'PNC', 'POOL', 'PPG', 'PPL', 'PFG', 'PG', 'PGR']
+2025-09-08 17:37:10,182 - ERROR - 
+20 Failed downloads:
+2025-09-08 17:37:10,182 - ERROR - ['PH', 'PM', 'PSX', 'PPG', 'PG', 'PFG', 'PNC', 'PNR', 'POOL', 'PFE', 'PEP', 'PSKY', 'PNW', 'PANW', 'PAYX', 'PAYC', 'PPL', 'PYPL', 'PCG', 'PGR']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-08)')
+2025-09-08 17:37:15,189 - INFO - Processing chunk 20/26: ['PLD', 'PRU', 'PEG', 'PTC', 'PSA', 'PHM', 'PWR', 'QCOM', 'DGX', 'RL', 'RJF', 'RTX', 'O', 'REG', 'REGN', 'RF', 'RSG', 'RMD', 'RVTY', 'HOOD']
+2025-09-08 17:37:18,842 - ERROR - 
+20 Failed downloads:
+2025-09-08 17:37:18,842 - ERROR - ['HOOD', 'PLD', 'PHM', 'RF', 'QCOM', 'RL', 'PSA', 'RMD', 'RSG', 'PRU', 'PTC', 'PWR', 'RTX', 'PEG', 'DGX', 'RJF', 'RVTY', 'REG', 'REGN', 'O']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-08)')
+2025-09-08 17:37:23,847 - INFO - Processing chunk 21/26: ['ROK', 'ROL', 'ROP', 'ROST', 'RCL', 'SPGI', 'CRM', 'SBAC', 'SLB', 'STX', 'SRE', 'NOW', 'SHW', 'SPG', 'SWKS', 'SJM', 'SW', 'SNA', 'SOLV', 'SO']
+2025-09-08 17:37:27,531 - ERROR - 
+20 Failed downloads:
+2025-09-08 17:37:27,531 - ERROR - ['SHW', 'SPGI', 'RCL', 'SW', 'SO', 'ROL', 'SNA', 'STX', 'SBAC', 'SLB', 'SOLV', 'ROP', 'SJM', 'SPG', 'NOW', 'SWKS', 'SRE', 'ROST', 'ROK', 'CRM']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-08)')
+2025-09-08 17:37:32,537 - INFO - Processing chunk 22/26: ['LUV', 'SWK', 'SBUX', 'STT', 'STLD', 'STE', 'SYK', 'SMCI', 'SYF', 'SNPS', 'SYY', 'TMUS', 'TROW', 'TTWO', 'TPR', 'TRGP', 'TGT', 'TEL', 'TDY', 'TER']
+2025-09-08 17:37:36,029 - ERROR - 
+20 Failed downloads:
+2025-09-08 17:37:36,029 - ERROR - ['TTWO', 'TMUS', 'SYK', 'SYF', 'LUV', 'SYY', 'TER', 'SWK', 'TROW', 'SMCI', 'STLD', 'STE', 'STT', 'SBUX', 'TRGP', 'SNPS', 'TPR', 'TEL', 'TGT', 'TDY']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-08)')
+2025-09-08 17:37:41,033 - INFO - Processing chunk 23/26: ['TSLA', 'TXN', 'TPL', 'TXT', 'TMO', 'TJX', 'TKO', 'TTD', 'TSCO', 'TT', 'TDG', 'TRV', 'TRMB', 'TFC', 'TYL', 'TSN', 'USB', 'UBER', 'UDR', 'ULTA']
+2025-09-08 17:37:45,097 - ERROR - 
+20 Failed downloads:
+2025-09-08 17:37:45,097 - ERROR - ['TXT', 'TRV', 'TMO', 'TXN', 'UBER', 'TPL', 'TJX', 'TDG', 'TTD', 'TYL', 'ULTA', 'TSLA', 'TFC', 'TSN', 'TSCO', 'TKO', 'UDR', 'USB', 'TRMB', 'TT']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-08)')
+2025-09-08 17:37:50,106 - INFO - Processing chunk 24/26: ['UNP', 'UAL', 'UPS', 'URI', 'UNH', 'UHS', 'VLO', 'VTR', 'VLTO', 'VRSN', 'VRSK', 'VZ', 'VRTX', 'VTRS', 'VICI', 'V', 'VST', 'VMC', 'WRB', 'GWW']
+2025-09-08 17:37:53,619 - ERROR - 
+20 Failed downloads:
+2025-09-08 17:37:53,619 - ERROR - ['UNH', 'VMC', 'UAL', 'VRTX', 'UHS', 'GWW', 'URI', 'VICI', 'V', 'VTR', 'VST', 'UNP', 'VRSK', 'VLO', 'VZ', 'WRB', 'VTRS', 'VRSN', 'UPS', 'VLTO']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-08)')
+2025-09-08 17:37:58,630 - INFO - Processing chunk 25/26: ['WAB', 'WMT', 'DIS', 'WBD', 'WM', 'WAT', 'WEC', 'WFC', 'WELL', 'WST', 'WDC', 'WY', 'WSM', 'WMB', 'WTW', 'WDAY', 'WYNN', 'XEL', 'XYL', 'YUM']
+2025-09-08 17:38:02,847 - ERROR - 
+20 Failed downloads:
+2025-09-08 17:38:02,848 - ERROR - ['WYNN', 'WEC', 'WMT', 'YUM', 'WMB', 'WST', 'WTW', 'WDC', 'WAB', 'WY', 'XEL', 'WBD', 'WELL', 'XYL', 'WSM', 'WM', 'WFC', 'WAT', 'DIS', 'WDAY']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-08)')
+2025-09-08 17:38:07,858 - INFO - Processing chunk 26/26: ['ZBRA', 'ZBH', 'ZTS', 'SPY']
+2025-09-08 17:38:08,725 - ERROR - 
+4 Failed downloads:
+2025-09-08 17:38:08,725 - ERROR - ['SPY', 'ZBH', 'ZBRA', 'ZTS']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-08)')
+2025-09-08 17:38:13,739 - WARNING - No data for end_date 2025-09-08. Finding nearest trading day using SPY ticker.
+2025-09-08 17:38:14,811 - ERROR - 
+1 Failed download:
+2025-09-08 17:38:14,811 - ERROR - ['SPY']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-08-29 -> 2025-09-08) (Yahoo error = "1m data not available for startTime=1756440000 and endTime=1757304000. Only 8 days worth of 1m granularity data are allowed to be fetched per request.")')
+2025-09-08 17:38:14,813 - ERROR - No valid data downloaded after adjustments. Exiting.
+2025-09-08 17:38:14,813 - ERROR - Error in create_bubble_chart: No valid data downloaded after adjustments.
+Traceback (most recent call last):
+  File "/Users/jaehwa/dev/spybubblechart/sp500_bubble_chart.py", line 166, in create_bubble_chart
+    data = download_data(tickers, start_date, end_date, interval)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jaehwa/dev/spybubblechart/sp500_bubble_chart.py", line 107, in download_data
+    raise ValueError("No valid data downloaded after adjustments.")
+ValueError: No valid data downloaded after adjustments.
+2025-09-09 10:03:29,729 - INFO - Starting create_bubble_chart...
+2025-09-09 10:03:29,736 - INFO - Starting to get S&P 500 tickers...
+2025-09-09 10:03:29,737 - INFO - Loading tickers from cache: sp500_tickers.pkl
+2025-09-09 10:03:29,743 - INFO - Starting to get market caps...
+2025-09-09 10:03:29,744 - INFO - Loading market caps from cache: market_caps.pkl
+2025-09-09 10:03:29,749 - INFO - Downloading price data for period 2025-09-07 to 2025-09-08 with interval 1m
+2025-09-09 10:03:29,750 - INFO - Checking nearest trading day using SPY ticker for end_date 2025-09-08
+2025-09-09 10:03:30,752 - ERROR - Error finding trading day: 'Adj Close'
+2025-09-09 10:03:30,773 - INFO - Processing chunk 1/26: ['MMM', 'AOS', 'ABT', 'ABBV', 'ACN', 'ADBE', 'AMD', 'AES', 'AFL', 'A', 'APD', 'ABNB', 'AKAM', 'ALB', 'ARE', 'ALGN', 'ALLE', 'LNT', 'ALL', 'GOOGL']
+2025-09-09 10:03:34,366 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:03:34,366 - ERROR - ['ALGN', 'ALB', 'AMD', 'AKAM', 'A', 'AOS', 'AFL', 'ABT', 'ACN', 'ALLE', 'ABBV', 'AES', 'ABNB', 'ADBE', 'GOOGL', 'ARE', 'APD', 'ALL', 'MMM', 'LNT']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:03:39,383 - INFO - Processing chunk 2/26: ['GOOG', 'MO', 'AMZN', 'AMCR', 'AEE', 'AEP', 'AXP', 'AIG', 'AMT', 'AWK', 'AMP', 'AME', 'AMGN', 'APH', 'ADI', 'AON', 'APA', 'APP', 'APO', 'AAPL']
+2025-09-09 10:03:42,991 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:03:42,992 - ERROR - ['APO', 'ADI', 'AON', 'AMCR', 'APP', 'AMP', 'AEE', 'AAPL', 'AWK', 'AMZN', 'APA', 'GOOG', 'MO', 'AIG', 'APH', 'AEP', 'AME', 'AMT', 'AMGN', 'AXP']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:03:48,005 - INFO - Processing chunk 3/26: ['AMAT', 'APTV', 'ACGL', 'ADM', 'ANET', 'AJG', 'AIZ', 'T', 'ATO', 'ADSK', 'ADP', 'AZO', 'AVB', 'AVY', 'AXON', 'BKR', 'BALL', 'BAC', 'BAX', 'BDX']
+2025-09-09 10:03:51,705 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:03:51,705 - ERROR - ['BALL', 'BDX', 'AVB', 'AZO', 'T', 'AIZ', 'ADM', 'ANET', 'ADSK', 'AVY', 'AXON', 'APTV', 'BAC', 'AJG', 'ADP', 'BAX', 'AMAT', 'BKR', 'ATO', 'ACGL']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:03:56,715 - INFO - Processing chunk 4/26: ['BRK.B', 'BBY', 'TECH', 'BIIB', 'BLK', 'BX', 'XYZ', 'BK', 'BA', 'BKNG', 'BSX', 'BMY', 'AVGO', 'BR', 'BRO', 'BF.B', 'BLDR', 'BG', 'BXP', 'CHRW']
+2025-09-09 10:04:01,697 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:04:01,697 - ERROR - ['BLK', 'BLDR', 'BRO', 'CHRW', 'BK', 'BX', 'BSX', 'BMY', 'BG', 'BBY', 'BIIB', 'BXP', 'BR', 'BF.B', 'TECH', 'XYZ', 'AVGO', 'BA', 'BKNG']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:04:01,697 - ERROR - ['BRK.B']: YFTzMissingError('possibly delisted; no timezone found')
+2025-09-09 10:04:06,701 - INFO - Processing chunk 5/26: ['CDNS', 'CPT', 'CPB', 'COF', 'CAH', 'KMX', 'CCL', 'CARR', 'CAT', 'CBOE', 'CBRE', 'CDW', 'COR', 'CNC', 'CNP', 'CF', 'CRL', 'SCHW', 'CHTR', 'CVX']
+2025-09-09 10:04:10,249 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:04:10,249 - ERROR - ['CDW', 'CNP', 'SCHW', 'KMX', 'CPT', 'CF', 'CBOE', 'CBRE', 'CRL', 'COR', 'CDNS', 'COF', 'CHTR', 'CVX', 'CCL', 'CPB', 'CAT', 'CNC', 'CARR', 'CAH']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:04:15,257 - INFO - Processing chunk 6/26: ['CMG', 'CB', 'CHD', 'CI', 'CINF', 'CTAS', 'CSCO', 'C', 'CFG', 'CLX', 'CME', 'CMS', 'KO', 'CTSH', 'COIN', 'CL', 'CMCSA', 'CAG', 'COP', 'ED']
+2025-09-09 10:04:18,780 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:04:18,781 - ERROR - ['CSCO', 'CLX', 'CINF', 'CAG', 'CL', 'CHD', 'CME', 'COP', 'CMG', 'CMS', 'CFG', 'CTSH', 'ED', 'COIN', 'CI', 'CMCSA', 'KO', 'C', 'CTAS', 'CB']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:04:23,794 - INFO - Processing chunk 7/26: ['STZ', 'CEG', 'COO', 'CPRT', 'GLW', 'CPAY', 'CTVA', 'CSGP', 'COST', 'CTRA', 'CRWD', 'CCI', 'CSX', 'CMI', 'CVS', 'DHR', 'DRI', 'DDOG', 'DVA', 'DAY']
+2025-09-09 10:04:27,333 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:04:27,334 - ERROR - ['DHR', 'CSGP', 'CEG', 'CTRA', 'CRWD', 'CMI', 'CPRT', 'DDOG', 'CVS', 'COO', 'CTVA', 'CSX', 'GLW', 'COST', 'DRI', 'DVA', 'CPAY', 'STZ', 'CCI', 'DAY']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:04:32,344 - INFO - Processing chunk 8/26: ['DECK', 'DE', 'DELL', 'DAL', 'DVN', 'DXCM', 'FANG', 'DLR', 'DG', 'DLTR', 'D', 'DPZ', 'DASH', 'DOV', 'DOW', 'DHI', 'DTE', 'DUK', 'DD', 'EMN']
+2025-09-09 10:04:35,869 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:04:35,870 - ERROR - ['DOW', 'DLTR', 'DD', 'EMN', 'DTE', 'FANG', 'DHI', 'DPZ', 'DUK', 'DG', 'DELL', 'DXCM', 'DECK', 'DVN', 'DLR', 'D', 'DE', 'DAL', 'DOV', 'DASH']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:04:40,879 - INFO - Processing chunk 9/26: ['ETN', 'EBAY', 'ECL', 'EIX', 'EW', 'EA', 'ELV', 'EME', 'EMR', 'ETR', 'EOG', 'EPAM', 'EQT', 'EFX', 'EQIX', 'EQR', 'ERIE', 'ESS', 'EL', 'EG']
+2025-09-09 10:04:44,473 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:04:44,473 - ERROR - ['EQT', 'EIX', 'EPAM', 'EFX', 'EOG', 'ETN', 'ERIE', 'EQR', 'EME', 'ETR', 'EW', 'EL', 'ESS', 'EQIX', 'EA', 'EBAY', 'ECL', 'EG', 'EMR', 'ELV']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:04:49,482 - INFO - Processing chunk 10/26: ['EVRG', 'ES', 'EXC', 'EXE', 'EXPE', 'EXPD', 'EXR', 'XOM', 'FFIV', 'FDS', 'FICO', 'FAST', 'FRT', 'FDX', 'FIS', 'FITB', 'FSLR', 'FE', 'FI', 'F']
+2025-09-09 10:04:53,044 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:04:53,050 - ERROR - ['FIS', 'FE', 'XOM', 'EVRG', 'EXPE', 'FDS', 'F', 'FRT', 'ES', 'FITB', 'FICO', 'FAST', 'EXC', 'EXE', 'EXR', 'EXPD', 'FI', 'FDX', 'FFIV', 'FSLR']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:04:58,061 - INFO - Processing chunk 11/26: ['FTNT', 'FTV', 'FOXA', 'FOX', 'BEN', 'FCX', 'GRMN', 'IT', 'GE', 'GEHC', 'GEV', 'GEN', 'GNRC', 'GD', 'GIS', 'GM', 'GPC', 'GILD', 'GPN', 'GL']
+2025-09-09 10:05:01,632 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:05:01,632 - ERROR - ['GRMN', 'GL', 'GNRC', 'GPN', 'FCX', 'GEV', 'BEN', 'FOXA', 'FTV', 'GEN', 'IT', 'GM', 'FTNT', 'FOX', 'GPC', 'GD', 'GE', 'GIS', 'GILD', 'GEHC']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:05:06,644 - INFO - Processing chunk 12/26: ['GDDY', 'GS', 'HAL', 'HIG', 'HAS', 'HCA', 'DOC', 'HSIC', 'HSY', 'HPE', 'HLT', 'HOLX', 'HD', 'HON', 'HRL', 'HST', 'HWM', 'HPQ', 'HUBB', 'HUM']
+2025-09-09 10:05:10,270 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:05:10,270 - ERROR - ['HSY', 'GS', 'HIG', 'HUBB', 'HRL', 'HWM', 'HST', 'HOLX', 'HUM', 'HLT', 'HAS', 'HCA', 'HD', 'HON', 'HPQ', 'DOC', 'HSIC', 'GDDY', 'HAL', 'HPE']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:05:15,274 - INFO - Processing chunk 13/26: ['HBAN', 'HII', 'IBM', 'IEX', 'IDXX', 'ITW', 'INCY', 'IR', 'PODD', 'INTC', 'IBKR', 'ICE', 'IFF', 'IP', 'IPG', 'INTU', 'ISRG', 'IVZ', 'INVH', 'IQV']
+2025-09-09 10:05:18,885 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:05:18,885 - ERROR - ['IPG', 'PODD', 'INTU', 'HII', 'IVZ', 'INTC', 'IBM', 'HBAN', 'ICE', 'ITW', 'IBKR', 'INVH', 'IFF', 'IQV', 'IEX', 'ISRG', 'IR', 'INCY', 'IP', 'IDXX']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:05:23,896 - INFO - Processing chunk 14/26: ['IRM', 'JBHT', 'JBL', 'JKHY', 'J', 'JNJ', 'JCI', 'JPM', 'K', 'KVUE', 'KDP', 'KEY', 'KEYS', 'KMB', 'KIM', 'KMI', 'KKR', 'KLAC', 'KHC', 'KR']
+2025-09-09 10:05:27,723 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:05:27,723 - ERROR - ['JCI', 'IRM', 'KDP', 'KHC', 'JKHY', 'KEYS', 'JBL', 'K', 'KR', 'KIM', 'KMI', 'KKR', 'KVUE', 'JPM', 'JBHT', 'KMB', 'JNJ', 'KEY', 'KLAC', 'J']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:05:32,729 - INFO - Processing chunk 15/26: ['LHX', 'LH', 'LRCX', 'LW', 'LVS', 'LDOS', 'LEN', 'LII', 'LLY', 'LIN', 'LYV', 'LKQ', 'LMT', 'L', 'LOW', 'LULU', 'LYB', 'MTB', 'MPC', 'MAR']
+2025-09-09 10:05:36,191 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:05:36,191 - ERROR - ['LHX', 'MTB', 'LII', 'LYB', 'LOW', 'LRCX', 'LW', 'LYV', 'MAR', 'LULU', 'LH', 'LLY', 'LKQ', 'LMT', 'MPC', 'LVS', 'L', 'LDOS', 'LIN', 'LEN']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:05:41,204 - INFO - Processing chunk 16/26: ['MMC', 'MLM', 'MAS', 'MA', 'MTCH', 'MKC', 'MCD', 'MCK', 'MDT', 'MRK', 'META', 'MET', 'MTD', 'MGM', 'MCHP', 'MU', 'MSFT', 'MAA', 'MRNA', 'MHK']
+2025-09-09 10:05:44,817 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:05:44,817 - ERROR - ['MTD', 'MCK', 'MRNA', 'MLM', 'MAA', 'MCHP', 'MMC', 'MCD', 'MKC', 'MU', 'MET', 'MRK', 'MDT', 'MAS', 'MHK', 'MA', 'MGM', 'MTCH', 'META', 'MSFT']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:05:49,827 - INFO - Processing chunk 17/26: ['MOH', 'TAP', 'MDLZ', 'MPWR', 'MNST', 'MCO', 'MS', 'MOS', 'MSI', 'MSCI', 'NDAQ', 'NTAP', 'NFLX', 'NEM', 'NWSA', 'NWS', 'NEE', 'NKE', 'NI', 'NDSN']
+2025-09-09 10:05:53,326 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:05:53,326 - ERROR - ['NDAQ', 'MSCI', 'MCO', 'NWS', 'MDLZ', 'MS', 'NEE', 'NI', 'NEM', 'NKE', 'MNST', 'NTAP', 'NWSA', 'TAP', 'MOS', 'MOH', 'MSI', 'NDSN', 'NFLX', 'MPWR']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:05:58,339 - INFO - Processing chunk 18/26: ['NSC', 'NTRS', 'NOC', 'NCLH', 'NRG', 'NUE', 'NVDA', 'NVR', 'NXPI', 'ORLY', 'OXY', 'ODFL', 'OMC', 'ON', 'OKE', 'ORCL', 'OTIS', 'PCAR', 'PKG', 'PLTR']
+2025-09-09 10:06:01,859 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:06:01,859 - ERROR - ['NRG', 'NTRS', 'OTIS', 'NCLH', 'ODFL', 'OKE', 'ORCL', 'ON', 'OMC', 'NXPI', 'ORLY', 'PLTR', 'NVR', 'NOC', 'PCAR', 'PKG', 'NUE', 'NSC', 'OXY', 'NVDA']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:06:06,867 - INFO - Processing chunk 19/26: ['PANW', 'PSKY', 'PH', 'PAYX', 'PAYC', 'PYPL', 'PNR', 'PEP', 'PFE', 'PCG', 'PM', 'PSX', 'PNW', 'PNC', 'POOL', 'PPG', 'PPL', 'PFG', 'PG', 'PGR']
+2025-09-09 10:06:10,419 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:06:10,420 - ERROR - ['PM', 'PEP', 'PH', 'PNR', 'PAYX', 'PGR', 'PSX', 'PAYC', 'PG', 'PSKY', 'PNW', 'PPL', 'PYPL', 'PPG', 'PFG', 'POOL', 'PANW', 'PNC', 'PFE', 'PCG']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:06:15,429 - INFO - Processing chunk 20/26: ['PLD', 'PRU', 'PEG', 'PTC', 'PSA', 'PHM', 'PWR', 'QCOM', 'DGX', 'RL', 'RJF', 'RTX', 'O', 'REG', 'REGN', 'RF', 'RSG', 'RMD', 'RVTY', 'HOOD']
+2025-09-09 10:06:19,136 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:06:19,136 - ERROR - ['PSA', 'HOOD', 'PRU', 'REG', 'RF', 'PWR', 'PLD', 'QCOM', 'DGX', 'PEG', 'O', 'RL', 'RTX', 'RSG', 'REGN', 'RVTY', 'RJF', 'RMD', 'PHM', 'PTC']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:06:24,142 - INFO - Processing chunk 21/26: ['ROK', 'ROL', 'ROP', 'ROST', 'RCL', 'SPGI', 'CRM', 'SBAC', 'SLB', 'STX', 'SRE', 'NOW', 'SHW', 'SPG', 'SWKS', 'SJM', 'SW', 'SNA', 'SOLV', 'SO']
+2025-09-09 10:06:27,696 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:06:27,697 - ERROR - ['CRM', 'SHW', 'SW', 'SPGI', 'RCL', 'ROST', 'NOW', 'SWKS', 'SLB', 'SPG', 'ROK', 'SBAC', 'ROL', 'SO', 'SRE', 'SNA', 'SJM', 'SOLV', 'ROP', 'STX']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:06:32,705 - INFO - Processing chunk 22/26: ['LUV', 'SWK', 'SBUX', 'STT', 'STLD', 'STE', 'SYK', 'SMCI', 'SYF', 'SNPS', 'SYY', 'TMUS', 'TROW', 'TTWO', 'TPR', 'TRGP', 'TGT', 'TEL', 'TDY', 'TER']
+2025-09-09 10:06:36,279 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:06:36,279 - ERROR - ['LUV', 'TRGP', 'SYY', 'TER', 'STT', 'SBUX', 'TPR', 'STLD', 'SYK', 'SWK', 'TEL', 'TROW', 'TDY', 'TMUS', 'SMCI', 'SNPS', 'SYF', 'TGT', 'TTWO', 'STE']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:06:41,288 - INFO - Processing chunk 23/26: ['TSLA', 'TXN', 'TPL', 'TXT', 'TMO', 'TJX', 'TKO', 'TTD', 'TSCO', 'TT', 'TDG', 'TRV', 'TRMB', 'TFC', 'TYL', 'TSN', 'USB', 'UBER', 'UDR', 'ULTA']
+2025-09-09 10:06:44,925 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:06:44,925 - ERROR - ['TMO', 'TT', 'TRMB', 'TSN', 'TSLA', 'USB', 'UDR', 'UBER', 'TPL', 'TKO', 'TXT', 'TTD', 'TDG', 'TJX', 'ULTA', 'TFC', 'TSCO', 'TRV', 'TYL', 'TXN']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:06:49,936 - INFO - Processing chunk 24/26: ['UNP', 'UAL', 'UPS', 'URI', 'UNH', 'UHS', 'VLO', 'VTR', 'VLTO', 'VRSN', 'VRSK', 'VZ', 'VRTX', 'VTRS', 'VICI', 'V', 'VST', 'VMC', 'WRB', 'GWW']
+2025-09-09 10:06:53,465 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:06:53,465 - ERROR - ['V', 'VLTO', 'VICI', 'VST', 'VRSK', 'VTRS', 'GWW', 'VTR', 'URI', 'VLO', 'UNH', 'VMC', 'VRTX', 'UHS', 'WRB', 'UNP', 'VZ', 'VRSN', 'UAL', 'UPS']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:06:58,476 - INFO - Processing chunk 25/26: ['WAB', 'WMT', 'DIS', 'WBD', 'WM', 'WAT', 'WEC', 'WFC', 'WELL', 'WST', 'WDC', 'WY', 'WSM', 'WMB', 'WTW', 'WDAY', 'WYNN', 'XEL', 'XYL', 'YUM']
+2025-09-09 10:07:02,173 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:07:02,173 - ERROR - ['XYL', 'DIS', 'WM', 'WYNN', 'WMT', 'WAT', 'WDC', 'WSM', 'WFC', 'YUM', 'WMB', 'WAB', 'WY', 'WDAY', 'WEC', 'WTW', 'XEL', 'WBD', 'WELL', 'WST']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:07:07,184 - INFO - Processing chunk 26/26: ['ZBRA', 'ZBH', 'ZTS', 'SPY']
+2025-09-09 10:07:08,077 - ERROR - 
+4 Failed downloads:
+2025-09-09 10:07:08,077 - ERROR - ['ZBH', 'SPY', 'ZBRA', 'ZTS']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:07:13,093 - ERROR - No valid data downloaded after adjustments. Exiting.
+2025-09-09 10:07:13,093 - ERROR - Error in create_bubble_chart: No valid data downloaded after adjustments.
+Traceback (most recent call last):
+  File "/Users/jaehwa/dev/spybubblechart/sp500_bubble_chart.py", line 171, in create_bubble_chart
+    data = download_data(tickers, start_date, end_date, interval)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jaehwa/dev/spybubblechart/sp500_bubble_chart.py", line 112, in download_data
+    raise ValueError("No valid data downloaded after adjustments.")
+ValueError: No valid data downloaded after adjustments.
+2025-09-09 10:11:54,724 - INFO - Starting create_bubble_chart...
+2025-09-09 10:11:54,725 - INFO - Starting to get S&P 500 tickers...
+2025-09-09 10:11:54,725 - INFO - Loading tickers from cache: sp500_tickers.pkl
+2025-09-09 10:11:54,726 - INFO - Starting to get market caps...
+2025-09-09 10:11:54,726 - INFO - Loading market caps from cache: market_caps.pkl
+2025-09-09 10:11:54,729 - INFO - Downloading price data for period 2025-09-07 to 2025-09-08 with interval 1m
+2025-09-09 10:11:54,730 - INFO - Checking nearest trading day using SPY ticker for end_date 2025-09-08
+2025-09-09 10:11:55,779 - ERROR - Error finding trading day: 'Adj Close'
+2025-09-09 10:11:55,779 - INFO - Adjusted start for 1m interval: 2025-09-07
+2025-09-09 10:11:55,789 - INFO - Processing chunk 1/26: ['MMM', 'AOS', 'ABT', 'ABBV', 'ACN', 'ADBE', 'AMD', 'AES', 'AFL', 'A', 'APD', 'ABNB', 'AKAM', 'ALB', 'ARE', 'ALGN', 'ALLE', 'LNT', 'ALL', 'GOOGL']
+2025-09-09 10:11:59,382 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:11:59,382 - ERROR - ['ALL', 'GOOGL', 'ABBV', 'ADBE', 'AOS', 'LNT', 'AMD', 'ABNB', 'ALB', 'ARE', 'ALGN', 'AKAM', 'ALLE', 'ABT', 'APD', 'AES', 'A', 'AFL', 'MMM', 'ACN']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:12:04,387 - INFO - Processing chunk 2/26: ['GOOG', 'MO', 'AMZN', 'AMCR', 'AEE', 'AEP', 'AXP', 'AIG', 'AMT', 'AWK', 'AMP', 'AME', 'AMGN', 'APH', 'ADI', 'AON', 'APA', 'APP', 'APO', 'AAPL']
+2025-09-09 10:12:08,208 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:12:08,208 - ERROR - ['AMP', 'AMGN', 'GOOG', 'APA', 'AEE', 'AMCR', 'AWK', 'AIG', 'APH', 'AME', 'APP', 'AON', 'AEP', 'APO', 'MO', 'AMZN', 'AMT', 'AXP', 'AAPL', 'ADI']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:12:13,211 - INFO - Processing chunk 3/26: ['AMAT', 'APTV', 'ACGL', 'ADM', 'ANET', 'AJG', 'AIZ', 'T', 'ATO', 'ADSK', 'ADP', 'AZO', 'AVB', 'AVY', 'AXON', 'BKR', 'BALL', 'BAC', 'BAX', 'BDX']
+2025-09-09 10:12:16,911 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:12:16,912 - ERROR - ['AVB', 'AIZ', 'ADM', 'BAX', 'BALL', 'ADP', 'ANET', 'BDX', 'ACGL', 'ADSK', 'AVY', 'AZO', 'ATO', 'AXON', 'AJG', 'AMAT', 'BAC', 'BKR', 'T', 'APTV']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:12:21,920 - INFO - Processing chunk 4/26: ['BRK.B', 'BBY', 'TECH', 'BIIB', 'BLK', 'BX', 'XYZ', 'BK', 'BA', 'BKNG', 'BSX', 'BMY', 'AVGO', 'BR', 'BRO', 'BF.B', 'BLDR', 'BG', 'BXP', 'CHRW']
+2025-09-09 10:12:26,957 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:12:26,957 - ERROR - ['BR', 'BRO', 'BA', 'BX', 'BG', 'BKNG', 'BK', 'BMY', 'BBY', 'BXP', 'XYZ', 'BSX', 'AVGO', 'BIIB', 'BLDR', 'CHRW', 'BF.B', 'BLK', 'TECH']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:12:26,958 - ERROR - ['BRK.B']: YFTzMissingError('possibly delisted; no timezone found')
+2025-09-09 10:12:31,971 - INFO - Processing chunk 5/26: ['CDNS', 'CPT', 'CPB', 'COF', 'CAH', 'KMX', 'CCL', 'CARR', 'CAT', 'CBOE', 'CBRE', 'CDW', 'COR', 'CNC', 'CNP', 'CF', 'CRL', 'SCHW', 'CHTR', 'CVX']
+2025-09-09 10:12:35,789 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:12:35,789 - ERROR - ['SCHW', 'CAH', 'CPB', 'CPT', 'CHTR', 'CDW', 'CNP', 'CBRE', 'CNC', 'CBOE', 'CRL', 'CF', 'CDNS', 'KMX', 'CCL', 'COF', 'CVX', 'CARR', 'CAT', 'COR']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:12:40,802 - INFO - Processing chunk 6/26: ['CMG', 'CB', 'CHD', 'CI', 'CINF', 'CTAS', 'CSCO', 'C', 'CFG', 'CLX', 'CME', 'CMS', 'KO', 'CTSH', 'COIN', 'CL', 'CMCSA', 'CAG', 'COP', 'ED']
+2025-09-09 10:12:44,368 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:12:44,368 - ERROR - ['CME', 'CB', 'CTSH', 'CSCO', 'C', 'KO', 'CMS', 'CINF', 'CMCSA', 'CL', 'COP', 'ED', 'CAG', 'CLX', 'CFG', 'CMG', 'CI', 'COIN', 'CTAS', 'CHD']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:12:49,372 - INFO - Processing chunk 7/26: ['STZ', 'CEG', 'COO', 'CPRT', 'GLW', 'CPAY', 'CTVA', 'CSGP', 'COST', 'CTRA', 'CRWD', 'CCI', 'CSX', 'CMI', 'CVS', 'DHR', 'DRI', 'DDOG', 'DVA', 'DAY']
+2025-09-09 10:12:53,103 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:12:53,118 - ERROR - ['CPAY', 'DVA', 'CRWD', 'COO', 'COST', 'CEG', 'CPRT', 'CMI', 'DAY', 'CSX', 'DRI', 'STZ', 'GLW', 'CCI', 'CVS', 'DDOG', 'CTVA', 'CSGP', 'DHR', 'CTRA']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:12:58,127 - INFO - Processing chunk 8/26: ['DECK', 'DE', 'DELL', 'DAL', 'DVN', 'DXCM', 'FANG', 'DLR', 'DG', 'DLTR', 'D', 'DPZ', 'DASH', 'DOV', 'DOW', 'DHI', 'DTE', 'DUK', 'DD', 'EMN']
+2025-09-09 10:13:01,817 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:13:01,868 - ERROR - ['DOV', 'FANG', 'DPZ', 'D', 'DG', 'DASH', 'DD', 'DECK', 'DAL', 'DVN', 'DLTR', 'EMN', 'DXCM', 'DTE', 'DHI', 'DELL', 'DUK', 'DE', 'DLR', 'DOW']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:13:06,884 - INFO - Processing chunk 9/26: ['ETN', 'EBAY', 'ECL', 'EIX', 'EW', 'EA', 'ELV', 'EME', 'EMR', 'ETR', 'EOG', 'EPAM', 'EQT', 'EFX', 'EQIX', 'EQR', 'ERIE', 'ESS', 'EL', 'EG']
+2025-09-09 10:13:10,404 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:13:10,405 - ERROR - ['EQIX', 'EOG', 'EME', 'ECL', 'EPAM', 'EBAY', 'EQR', 'EMR', 'EG', 'ERIE', 'EQT', 'EIX', 'ELV', 'ETN', 'EFX', 'ETR', 'ESS', 'EL', 'EA', 'EW']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:13:15,408 - INFO - Processing chunk 10/26: ['EVRG', 'ES', 'EXC', 'EXE', 'EXPE', 'EXPD', 'EXR', 'XOM', 'FFIV', 'FDS', 'FICO', 'FAST', 'FRT', 'FDX', 'FIS', 'FITB', 'FSLR', 'FE', 'FI', 'F']
+2025-09-09 10:13:18,924 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:13:18,924 - ERROR - ['EXPD', 'FDS', 'EXPE', 'FICO', 'FITB', 'FDX', 'FRT', 'F', 'ES', 'EXR', 'FE', 'EXE', 'FFIV', 'EVRG', 'XOM', 'FIS', 'FSLR', 'FAST', 'EXC', 'FI']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:13:23,928 - INFO - Processing chunk 11/26: ['FTNT', 'FTV', 'FOXA', 'FOX', 'BEN', 'FCX', 'GRMN', 'IT', 'GE', 'GEHC', 'GEV', 'GEN', 'GNRC', 'GD', 'GIS', 'GM', 'GPC', 'GILD', 'GPN', 'GL']
+2025-09-09 10:13:27,404 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:13:27,404 - ERROR - ['GEHC', 'BEN', 'IT', 'FTNT', 'GE', 'GRMN', 'GEV', 'GM', 'GILD', 'GIS', 'GEN', 'GL', 'FOX', 'GPC', 'GPN', 'FCX', 'GD', 'GNRC', 'FTV', 'FOXA']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:13:32,407 - INFO - Processing chunk 12/26: ['GDDY', 'GS', 'HAL', 'HIG', 'HAS', 'HCA', 'DOC', 'HSIC', 'HSY', 'HPE', 'HLT', 'HOLX', 'HD', 'HON', 'HRL', 'HST', 'HWM', 'HPQ', 'HUBB', 'HUM']
+2025-09-09 10:13:36,029 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:13:36,030 - ERROR - ['HSIC', 'HLT', 'GDDY', 'HPQ', 'HPE', 'HD', 'HIG', 'HSY', 'DOC', 'HRL', 'HAS', 'HST', 'HCA', 'HOLX', 'HUM', 'GS', 'HAL', 'HWM', 'HON', 'HUBB']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:13:41,040 - INFO - Processing chunk 13/26: ['HBAN', 'HII', 'IBM', 'IEX', 'IDXX', 'ITW', 'INCY', 'IR', 'PODD', 'INTC', 'IBKR', 'ICE', 'IFF', 'IP', 'IPG', 'INTU', 'ISRG', 'IVZ', 'INVH', 'IQV']
+2025-09-09 10:13:44,567 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:13:44,567 - ERROR - ['INTC', 'INCY', 'IBKR', 'ITW', 'INVH', 'IBM', 'IR', 'HBAN', 'IP', 'ICE', 'HII', 'IQV', 'IFF', 'IDXX', 'IVZ', 'IPG', 'IEX', 'ISRG', 'PODD', 'INTU']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:13:49,579 - INFO - Processing chunk 14/26: ['IRM', 'JBHT', 'JBL', 'JKHY', 'J', 'JNJ', 'JCI', 'JPM', 'K', 'KVUE', 'KDP', 'KEY', 'KEYS', 'KMB', 'KIM', 'KMI', 'KKR', 'KLAC', 'KHC', 'KR']
+2025-09-09 10:13:53,059 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:13:53,059 - ERROR - ['KHC', 'JNJ', 'JKHY', 'KIM', 'JCI', 'JPM', 'J', 'KDP', 'JBHT', 'KVUE', 'KEY', 'KLAC', 'KR', 'JBL', 'KMB', 'K', 'KMI', 'KEYS', 'KKR', 'IRM']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:13:58,069 - INFO - Processing chunk 15/26: ['LHX', 'LH', 'LRCX', 'LW', 'LVS', 'LDOS', 'LEN', 'LII', 'LLY', 'LIN', 'LYV', 'LKQ', 'LMT', 'L', 'LOW', 'LULU', 'LYB', 'MTB', 'MPC', 'MAR']
+2025-09-09 10:14:01,878 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:14:01,878 - ERROR - ['LMT', 'LYB', 'LH', 'MPC', 'LULU', 'LKQ', 'LVS', 'MAR', 'LII', 'LIN', 'MTB', 'LLY', 'LRCX', 'LEN', 'LW', 'L', 'LYV', 'LOW', 'LDOS', 'LHX']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:14:06,888 - INFO - Processing chunk 16/26: ['MMC', 'MLM', 'MAS', 'MA', 'MTCH', 'MKC', 'MCD', 'MCK', 'MDT', 'MRK', 'META', 'MET', 'MTD', 'MGM', 'MCHP', 'MU', 'MSFT', 'MAA', 'MRNA', 'MHK']
+2025-09-09 10:14:10,533 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:14:10,533 - ERROR - ['MCK', 'MLM', 'MCHP', 'META', 'MU', 'MDT', 'MHK', 'MRK', 'MTD', 'MGM', 'MTCH', 'MET', 'MAA', 'MKC', 'MA', 'MMC', 'MCD', 'MRNA', 'MAS', 'MSFT']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:14:15,542 - INFO - Processing chunk 17/26: ['MOH', 'TAP', 'MDLZ', 'MPWR', 'MNST', 'MCO', 'MS', 'MOS', 'MSI', 'MSCI', 'NDAQ', 'NTAP', 'NFLX', 'NEM', 'NWSA', 'NWS', 'NEE', 'NKE', 'NI', 'NDSN']
+2025-09-09 10:14:19,130 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:14:19,130 - ERROR - ['NDAQ', 'MOS', 'MSCI', 'NKE', 'NWSA', 'NDSN', 'MSI', 'MCO', 'MOH', 'MPWR', 'MNST', 'NI', 'TAP', 'NWS', 'NEE', 'NFLX', 'MDLZ', 'NEM', 'MS', 'NTAP']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:14:24,145 - INFO - Processing chunk 18/26: ['NSC', 'NTRS', 'NOC', 'NCLH', 'NRG', 'NUE', 'NVDA', 'NVR', 'NXPI', 'ORLY', 'OXY', 'ODFL', 'OMC', 'ON', 'OKE', 'ORCL', 'OTIS', 'PCAR', 'PKG', 'PLTR']
+2025-09-09 10:14:27,823 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:14:27,823 - ERROR - ['NVR', 'PCAR', 'NTRS', 'ODFL', 'PLTR', 'NVDA', 'PKG', 'NOC', 'ON', 'NCLH', 'NRG', 'NXPI', 'NSC', 'OXY', 'ORCL', 'ORLY', 'OKE', 'OTIS', 'OMC', 'NUE']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:14:32,835 - INFO - Processing chunk 19/26: ['PANW', 'PSKY', 'PH', 'PAYX', 'PAYC', 'PYPL', 'PNR', 'PEP', 'PFE', 'PCG', 'PM', 'PSX', 'PNW', 'PNC', 'POOL', 'PPG', 'PPL', 'PFG', 'PG', 'PGR']
+2025-09-09 10:14:36,490 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:14:36,491 - ERROR - ['PCG', 'PGR', 'PNR', 'PSX', 'PPL', 'POOL', 'PEP', 'PANW', 'PFE', 'PNW', 'PPG', 'PAYC', 'PAYX', 'PSKY', 'PYPL', 'PG', 'PM', 'PFG', 'PNC', 'PH']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:14:41,496 - INFO - Processing chunk 20/26: ['PLD', 'PRU', 'PEG', 'PTC', 'PSA', 'PHM', 'PWR', 'QCOM', 'DGX', 'RL', 'RJF', 'RTX', 'O', 'REG', 'REGN', 'RF', 'RSG', 'RMD', 'RVTY', 'HOOD']
+2025-09-09 10:14:45,331 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:14:45,331 - ERROR - ['PHM', 'O', 'PTC', 'PEG', 'RF', 'PSA', 'REGN', 'HOOD', 'DGX', 'REG', 'RJF', 'RSG', 'PRU', 'RL', 'PLD', 'PWR', 'RVTY', 'QCOM', 'RTX', 'RMD']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:14:50,342 - INFO - Processing chunk 21/26: ['ROK', 'ROL', 'ROP', 'ROST', 'RCL', 'SPGI', 'CRM', 'SBAC', 'SLB', 'STX', 'SRE', 'NOW', 'SHW', 'SPG', 'SWKS', 'SJM', 'SW', 'SNA', 'SOLV', 'SO']
+2025-09-09 10:14:54,072 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:14:54,072 - ERROR - ['ROK', 'SOLV', 'ROST', 'ROL', 'SWKS', 'SO', 'SW', 'SRE', 'SHW', 'ROP', 'NOW', 'SJM', 'RCL', 'SPG', 'STX', 'SLB', 'SBAC', 'SPGI', 'SNA', 'CRM']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:14:59,088 - INFO - Processing chunk 22/26: ['LUV', 'SWK', 'SBUX', 'STT', 'STLD', 'STE', 'SYK', 'SMCI', 'SYF', 'SNPS', 'SYY', 'TMUS', 'TROW', 'TTWO', 'TPR', 'TRGP', 'TGT', 'TEL', 'TDY', 'TER']
+2025-09-09 10:15:02,872 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:15:02,872 - ERROR - ['SYY', 'SBUX', 'STE', 'SNPS', 'SWK', 'LUV', 'TMUS', 'TTWO', 'STT', 'SYK', 'SMCI', 'TEL', 'STLD', 'TER', 'TDY', 'TRGP', 'SYF', 'TROW', 'TPR', 'TGT']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:15:07,879 - INFO - Processing chunk 23/26: ['TSLA', 'TXN', 'TPL', 'TXT', 'TMO', 'TJX', 'TKO', 'TTD', 'TSCO', 'TT', 'TDG', 'TRV', 'TRMB', 'TFC', 'TYL', 'TSN', 'USB', 'UBER', 'UDR', 'ULTA']
+2025-09-09 10:15:11,386 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:15:11,386 - ERROR - ['TPL', 'ULTA', 'TT', 'TRMB', 'UBER', 'TKO', 'TTD', 'USB', 'TXT', 'TMO', 'TRV', 'TSLA', 'TDG', 'TSN', 'TFC', 'UDR', 'TSCO', 'TYL', 'TJX', 'TXN']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:15:16,391 - INFO - Processing chunk 24/26: ['UNP', 'UAL', 'UPS', 'URI', 'UNH', 'UHS', 'VLO', 'VTR', 'VLTO', 'VRSN', 'VRSK', 'VZ', 'VRTX', 'VTRS', 'VICI', 'V', 'VST', 'VMC', 'WRB', 'GWW']
+2025-09-09 10:15:19,996 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:15:19,996 - ERROR - ['VRSN', 'VRSK', 'VTRS', 'UAL', 'UNP', 'VZ', 'VLTO', 'UNH', 'UPS', 'VMC', 'URI', 'V', 'VTR', 'VRTX', 'WRB', 'UHS', 'VLO', 'VICI', 'GWW', 'VST']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:15:25,009 - INFO - Processing chunk 25/26: ['WAB', 'WMT', 'DIS', 'WBD', 'WM', 'WAT', 'WEC', 'WFC', 'WELL', 'WST', 'WDC', 'WY', 'WSM', 'WMB', 'WTW', 'WDAY', 'WYNN', 'XEL', 'XYL', 'YUM']
+2025-09-09 10:15:28,720 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:15:28,720 - ERROR - ['WAT', 'WYNN', 'WM', 'WDAY', 'WMB', 'WSM', 'WMT', 'WDC', 'WY', 'WST', 'WELL', 'XEL', 'WTW', 'YUM', 'XYL', 'WBD', 'WFC', 'DIS', 'WEC', 'WAB']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:15:33,729 - INFO - Processing chunk 26/26: ['ZBRA', 'ZBH', 'ZTS', 'SPY']
+2025-09-09 10:15:34,584 - ERROR - 
+4 Failed downloads:
+2025-09-09 10:15:34,584 - ERROR - ['ZBH', 'ZBRA', 'ZTS', 'SPY']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-07)')
+2025-09-09 10:15:39,598 - ERROR - No valid data downloaded after adjustments. Exiting.
+2025-09-09 10:15:39,599 - ERROR - Error in create_bubble_chart: No valid data downloaded after adjustments.
+Traceback (most recent call last):
+  File "/Users/jaehwa/dev/spybubblechart/sp500_bubble_chart.py", line 171, in create_bubble_chart
+    data = download_data(tickers, start_date, end_date, interval)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jaehwa/dev/spybubblechart/sp500_bubble_chart.py", line 112, in download_data
+    raise ValueError("No valid data downloaded after adjustments.")
+ValueError: No valid data downloaded after adjustments.
+2025-09-09 10:32:15,088 - INFO - Starting create_bubble_chart...
+2025-09-09 10:32:15,088 - INFO - Starting to get S&P 500 tickers...
+2025-09-09 10:32:15,088 - INFO - Loading tickers from cache: sp500_tickers.pkl
+2025-09-09 10:32:15,090 - INFO - Starting to get market caps...
+2025-09-09 10:32:15,090 - INFO - Loading market caps from cache: market_caps.pkl
+2025-09-09 10:32:15,093 - INFO - Downloading price data for period 2025-09-07 to 2025-09-08 with interval 1m
+2025-09-09 10:32:15,094 - INFO - Adjusted start for 1m interval: 2025-09-07
+2025-09-09 10:32:15,103 - INFO - Processing chunk 1/26: ['MMM', 'AOS', 'ABT', 'ABBV', 'ACN', 'ADBE', 'AMD', 'AES', 'AFL', 'A', 'APD', 'ABNB', 'AKAM', 'ALB', 'ARE', 'ALGN', 'ALLE', 'LNT', 'ALL', 'GOOGL']
+2025-09-09 10:32:19,236 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:32:19,237 - ERROR - ['AMD', 'ALB', 'APD', 'ALLE', 'AKAM', 'ABNB', 'ACN', 'GOOGL', 'ARE', 'ADBE', 'A', 'ALL', 'MMM', 'ALGN', 'AFL', 'LNT', 'ABBV', 'AOS', 'AES', 'ABT']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-08)')
+2025-09-09 10:32:24,244 - INFO - Processing chunk 2/26: ['GOOG', 'MO', 'AMZN', 'AMCR', 'AEE', 'AEP', 'AXP', 'AIG', 'AMT', 'AWK', 'AMP', 'AME', 'AMGN', 'APH', 'ADI', 'AON', 'APA', 'APP', 'APO', 'AAPL']
+2025-09-09 10:32:27,814 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:32:27,814 - ERROR - ['AMCR', 'MO', 'AWK', 'AEP', 'AON', 'AXP', 'APA', 'AMP', 'GOOG', 'AMZN', 'AIG', 'APP', 'AEE', 'AAPL', 'ADI', 'AME', 'AMT', 'AMGN', 'APO', 'APH']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-08)')
+2025-09-09 10:32:32,827 - INFO - Processing chunk 3/26: ['AMAT', 'APTV', 'ACGL', 'ADM', 'ANET', 'AJG', 'AIZ', 'T', 'ATO', 'ADSK', 'ADP', 'AZO', 'AVB', 'AVY', 'AXON', 'BKR', 'BALL', 'BAC', 'BAX', 'BDX']
+2025-09-09 10:32:36,512 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:32:36,512 - ERROR - ['AMAT', 'AZO', 'ACGL', 'AIZ', 'BDX', 'ANET', 'BAX', 'BAC', 'ADSK', 'ADP', 'ADM', 'AVB', 'BALL', 'AVY', 'T', 'ATO', 'AXON', 'APTV', 'BKR', 'AJG']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-08)')
+2025-09-09 10:32:41,522 - INFO - Processing chunk 4/26: ['BRK.B', 'BBY', 'TECH', 'BIIB', 'BLK', 'BX', 'XYZ', 'BK', 'BA', 'BKNG', 'BSX', 'BMY', 'AVGO', 'BR', 'BRO', 'BF.B', 'BLDR', 'BG', 'BXP', 'CHRW']
+2025-09-09 10:32:46,147 - ERROR - 
+20 Failed downloads:
+2025-09-09 10:32:46,147 - ERROR - ['BMY', 'BF.B', 'BG', 'CHRW', 'BR', 'BLDR', 'TECH', 'AVGO', 'BBY', 'BK', 'BX', 'BSX', 'BIIB', 'BRO', 'BXP', 'XYZ', 'BLK', 'BKNG', 'BA']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-07 -> 2025-09-08)')
+2025-09-09 10:32:46,147 - ERROR - ['BRK.B']: YFTzMissingError('possibly delisted; no timezone found')
+2025-09-09 10:43:07,359 - INFO - Starting create_bubble_chart...
+2025-09-09 10:43:07,359 - INFO - Starting to get S&P 500 tickers...
+2025-09-09 10:43:07,359 - INFO - Loading tickers from cache: sp500_tickers.pkl
+2025-09-09 10:43:07,361 - INFO - Starting to get market caps...
+2025-09-09 10:43:07,361 - INFO - Loading market caps from cache: market_caps.pkl
+2025-09-09 10:43:07,364 - INFO - NYSE holidays cached for year 2025: nyse_holidays_2025.pkl
+2025-09-09 10:43:07,366 - INFO - Trading days calculated and cached for year 2025: 251 days
+2025-09-09 10:43:07,366 - INFO - Downloading price data for period 2025-09-08 to 2025-09-08 with interval 1m
+2025-09-09 10:43:07,366 - INFO - Loading trading days from cache: trading_days_2025.pkl
+2025-09-09 10:43:07,367 - INFO - Loading trading days from cache: trading_days_2025.pkl
+2025-09-09 10:43:07,367 - INFO - Adjusted start_date from 2025-09-08 to nearest trading day 2025-09-05 for 1d period
+2025-09-09 10:43:07,367 - ERROR - No valid data downloaded after adjustments. Exiting.
+2025-09-09 10:43:07,367 - ERROR - Error in create_bubble_chart: No valid data downloaded after adjustments.
+Traceback (most recent call last):
+  File "/Users/jaehwa/dev/spybubblechart/sp500_bubble_chart.py", line 265, in create_bubble_chart
+    data = download_data(tickers, start_date, end_date, interval)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jaehwa/dev/spybubblechart/sp500_bubble_chart.py", line 222, in download_data
+    raise ValueError("No valid data downloaded after adjustments.")
+ValueError: No valid data downloaded after adjustments.
+2025-09-09 11:06:24,142 - INFO - Starting create_bubble_chart...
+2025-09-09 11:06:24,143 - INFO - Starting to get S&P 500 tickers...
+2025-09-09 11:06:24,143 - INFO - Loading tickers from cache: sp500_tickers.pkl
+2025-09-09 11:06:24,151 - INFO - Starting to get market caps...
+2025-09-09 11:06:24,151 - INFO - Loading market caps from cache: market_caps.pkl
+2025-09-09 11:06:24,155 - INFO - Loading trading days from cache: trading_days_2025.pkl
+2025-09-09 11:06:24,156 - INFO - Downloading price data for period 2025-09-08 to 2025-09-08 with interval 1m
+2025-09-09 11:06:24,178 - INFO - Loading trading days from cache: trading_days_2025.pkl
+2025-09-09 11:06:24,178 - INFO - Loading trading days from cache: trading_days_2025.pkl
+2025-09-09 11:06:24,179 - INFO - Adjusted start_date from 2025-09-08 to nearest trading day 2025-09-05 for 1d period
+2025-09-09 11:06:24,189 - INFO - Processing chunk 1/26: ['MMM', 'AOS', 'ABT', 'ABBV', 'ACN', 'ADBE', 'AMD', 'AES', 'AFL', 'A', 'APD', 'ABNB', 'AKAM', 'ALB', 'ARE', 'ALGN', 'ALLE', 'LNT', 'ALL', 'GOOGL']
+2025-09-09 11:06:31,132 - INFO - Processing chunk 2/26: ['GOOG', 'MO', 'AMZN', 'AMCR', 'AEE', 'AEP', 'AXP', 'AIG', 'AMT', 'AWK', 'AMP', 'AME', 'AMGN', 'APH', 'ADI', 'AON', 'APA', 'APP', 'APO', 'AAPL']
+2025-09-09 11:06:37,402 - INFO - Processing chunk 3/26: ['AMAT', 'APTV', 'ACGL', 'ADM', 'ANET', 'AJG', 'AIZ', 'T', 'ATO', 'ADSK', 'ADP', 'AZO', 'AVB', 'AVY', 'AXON', 'BKR', 'BALL', 'BAC', 'BAX', 'BDX']
+2025-09-09 11:06:38,298 - ERROR - 
+4 Failed downloads:
+2025-09-09 11:06:38,298 - ERROR - ['AMAT', 'ADP']: DNSError('Failed to perform, curl: (6) Could not resolve host: query2.finance.yahoo.com. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:06:38,298 - ERROR - ['ACGL']: OperationalError('unable to open database file')
+2025-09-09 11:06:38,298 - ERROR - ['BALL']: DNSError('Failed to perform, curl: (6) getaddrinfo() thread failed to start. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:06:43,331 - INFO - Processing chunk 4/26: ['BRK.B', 'BBY', 'TECH', 'BIIB', 'BLK', 'BX', 'XYZ', 'BK', 'BA', 'BKNG', 'BSX', 'BMY', 'AVGO', 'BR', 'BRO', 'BF.B', 'BLDR', 'BG', 'BXP', 'CHRW']
+2025-09-09 11:06:43,446 - ERROR - Failed to get ticker 'BRK.B' reason: Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: /usr/local/anaconda3/lib/python3.11/site-packages/certifi/cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2025-09-09 11:06:44,210 - ERROR - 
+18 Failed downloads:
+2025-09-09 11:06:44,210 - ERROR - ['BR']: DNSError('Failed to perform, curl: (6) Could not resolve host: query2.finance.yahoo.com. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:06:44,210 - ERROR - ['XYZ', 'BF.B', 'BLDR', 'BK', 'TECH', 'BRK.B']: DNSError('Failed to perform, curl: (6) getaddrinfo() thread failed to start. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:06:44,210 - ERROR - ['BBY', 'BLK', 'BX', 'BIIB', 'BXP', 'CHRW', 'BMY', 'BG']: OperationalError('unable to open database file')
+2025-09-09 11:06:44,210 - ERROR - ['BSX', 'BKNG', 'BA']: SSLError('Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: /usr/local/anaconda3/lib/python3.11/site-packages/certifi/cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:06:49,244 - INFO - Processing chunk 5/26: ['CDNS', 'CPT', 'CPB', 'COF', 'CAH', 'KMX', 'CCL', 'CARR', 'CAT', 'CBOE', 'CBRE', 'CDW', 'COR', 'CNC', 'CNP', 'CF', 'CRL', 'SCHW', 'CHTR', 'CVX']
+2025-09-09 11:06:49,697 - ERROR - 
+18 Failed downloads:
+2025-09-09 11:06:49,697 - ERROR - ['CRL', 'COR']: DNSError('Failed to perform, curl: (6) Could not resolve host: query2.finance.yahoo.com. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:06:49,697 - ERROR - ['CPT', 'CAH', 'CCL', 'KMX', 'CDNS', 'CNC', 'SCHW', 'COF', 'CVX']: DNSError('Failed to perform, curl: (6) getaddrinfo() thread failed to start. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:06:49,697 - ERROR - ['CAT', 'CDW', 'CBRE', 'CARR', 'CF', 'CHTR']: OperationalError('unable to open database file')
+2025-09-09 11:06:49,697 - ERROR - ['CPB']: SSLError('Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: /usr/local/anaconda3/lib/python3.11/site-packages/certifi/cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:06:54,708 - INFO - Processing chunk 6/26: ['CMG', 'CB', 'CHD', 'CI', 'CINF', 'CTAS', 'CSCO', 'C', 'CFG', 'CLX', 'CME', 'CMS', 'KO', 'CTSH', 'COIN', 'CL', 'CMCSA', 'CAG', 'COP', 'ED']
+2025-09-09 11:06:54,761 - ERROR - 
+20 Failed downloads:
+2025-09-09 11:06:54,761 - ERROR - ['CTAS']: DNSError('Failed to perform, curl: (6) Could not resolve host: query2.finance.yahoo.com. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:06:54,761 - ERROR - ['CMS', 'CTSH', 'CI', 'CHD', 'CB']: DNSError('Failed to perform, curl: (6) getaddrinfo() thread failed to start. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:06:54,761 - ERROR - ['CFG', 'CSCO', 'CINF', 'COP', 'CMG', 'KO', 'C', 'COIN', 'CLX', 'CAG', 'CL', 'ED', 'CME', 'CMCSA']: OperationalError('unable to open database file')
+2025-09-09 11:06:59,765 - INFO - Processing chunk 7/26: ['STZ', 'CEG', 'COO', 'CPRT', 'GLW', 'CPAY', 'CTVA', 'CSGP', 'COST', 'CTRA', 'CRWD', 'CCI', 'CSX', 'CMI', 'CVS', 'DHR', 'DRI', 'DDOG', 'DVA', 'DAY']
+2025-09-09 11:06:59,808 - ERROR - 
+20 Failed downloads:
+2025-09-09 11:06:59,808 - ERROR - ['DAY', 'DDOG', 'COO', 'DRI', 'CMI', 'CSGP', 'CSX', 'CPRT', 'CTRA', 'DHR', 'GLW', 'STZ', 'CCI', 'CPAY', 'CVS', 'CRWD', 'CTVA', 'DVA', 'COST', 'CEG']: OperationalError('unable to open database file')
+2025-09-09 11:07:15,781 - INFO - Starting create_bubble_chart...
+2025-09-09 11:07:15,781 - INFO - Starting to get S&P 500 tickers...
+2025-09-09 11:07:15,781 - INFO - Loading tickers from cache: sp500_tickers.pkl
+2025-09-09 11:07:15,782 - INFO - Starting to get market caps...
+2025-09-09 11:07:15,782 - INFO - Loading market caps from cache: market_caps.pkl
+2025-09-09 11:07:15,785 - INFO - Loading trading days from cache: trading_days_2025.pkl
+2025-09-09 11:07:15,785 - INFO - Downloading price data for period 2025-09-08 to 2025-09-08 with interval 1m
+2025-09-09 11:07:15,808 - INFO - Loading trading days from cache: trading_days_2025.pkl
+2025-09-09 11:07:15,809 - INFO - Loading trading days from cache: trading_days_2025.pkl
+2025-09-09 11:07:15,809 - INFO - Adjusted start_date from 2025-09-08 to nearest trading day 2025-09-05 for 1d period
+2025-09-09 11:07:15,819 - INFO - Processing chunk 1/26: ['MMM', 'AOS', 'ABT', 'ABBV', 'ACN', 'ADBE', 'AMD', 'AES', 'AFL', 'A', 'APD', 'ABNB', 'AKAM', 'ALB', 'ARE', 'ALGN', 'ALLE', 'LNT', 'ALL', 'GOOGL']
+2025-09-09 11:07:22,573 - INFO - Processing chunk 2/26: ['GOOG', 'MO', 'AMZN', 'AMCR', 'AEE', 'AEP', 'AXP', 'AIG', 'AMT', 'AWK', 'AMP', 'AME', 'AMGN', 'APH', 'ADI', 'AON', 'APA', 'APP', 'APO', 'AAPL']
+2025-09-09 11:07:28,827 - INFO - Processing chunk 3/26: ['AMAT', 'APTV', 'ACGL', 'ADM', 'ANET', 'AJG', 'AIZ', 'T', 'ATO', 'ADSK', 'ADP', 'AZO', 'AVB', 'AVY', 'AXON', 'BKR', 'BALL', 'BAC', 'BAX', 'BDX']
+2025-09-09 11:07:29,718 - ERROR - 
+4 Failed downloads:
+2025-09-09 11:07:29,718 - ERROR - ['AXON']: DNSError('Failed to perform, curl: (6) Could not resolve host: query2.finance.yahoo.com. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:07:29,718 - ERROR - ['BAC']: DNSError('Failed to perform, curl: (6) getaddrinfo() thread failed to start. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:07:29,719 - ERROR - ['AIZ', 'AVY']: OperationalError('unable to open database file')
+2025-09-09 11:07:34,759 - INFO - Processing chunk 4/26: ['BRK.B', 'BBY', 'TECH', 'BIIB', 'BLK', 'BX', 'XYZ', 'BK', 'BA', 'BKNG', 'BSX', 'BMY', 'AVGO', 'BR', 'BRO', 'BF.B', 'BLDR', 'BG', 'BXP', 'CHRW']
+2025-09-09 11:07:34,768 - ERROR - Failed to get ticker 'BRK.B' reason: Failed to perform, curl: (6) getaddrinfo() thread failed to start. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+2025-09-09 11:07:35,190 - ERROR - 
+19 Failed downloads:
+2025-09-09 11:07:35,191 - ERROR - ['BG', 'BRK.B', 'BA', 'TECH']: DNSError('Failed to perform, curl: (6) Could not resolve host: query2.finance.yahoo.com. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:07:35,191 - ERROR - ['AVGO', 'BBY', 'BIIB', 'BK']: OperationalError('unable to open database file')
+2025-09-09 11:07:35,191 - ERROR - ['CHRW', 'BSX', 'BR', 'BRO', 'BLK', 'BKNG', 'BX', 'BXP']: DNSError('Failed to perform, curl: (6) getaddrinfo() thread failed to start. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:07:35,191 - ERROR - ['XYZ', 'BLDR']: SSLError('Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: /usr/local/anaconda3/lib/python3.11/site-packages/certifi/cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:07:35,191 - ERROR - ['BF.B']: YFPricesMissingError('possibly delisted; no price data found  (1m 2025-09-05 -> 2025-09-08)')
+2025-09-09 11:07:40,199 - INFO - Processing chunk 5/26: ['CDNS', 'CPT', 'CPB', 'COF', 'CAH', 'KMX', 'CCL', 'CARR', 'CAT', 'CBOE', 'CBRE', 'CDW', 'COR', 'CNC', 'CNP', 'CF', 'CRL', 'SCHW', 'CHTR', 'CVX']
+2025-09-09 11:07:40,597 - ERROR - 
+18 Failed downloads:
+2025-09-09 11:07:40,597 - ERROR - ['CAT', 'CARR', 'CDW']: DNSError('Failed to perform, curl: (6) Could not resolve host: query2.finance.yahoo.com. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:07:40,597 - ERROR - ['COR', 'CAH', 'CF', 'CNC', 'CPT', 'CCL', 'CBRE', 'KMX']: DNSError('Failed to perform, curl: (6) getaddrinfo() thread failed to start. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:07:40,597 - ERROR - ['CBOE', 'SCHW', 'CVX', 'CHTR', 'CPB']: OperationalError('unable to open database file')
+2025-09-09 11:07:40,597 - ERROR - ['CRL', 'COF']: SSLError('Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: /usr/local/anaconda3/lib/python3.11/site-packages/certifi/cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:07:45,607 - INFO - Processing chunk 6/26: ['CMG', 'CB', 'CHD', 'CI', 'CINF', 'CTAS', 'CSCO', 'C', 'CFG', 'CLX', 'CME', 'CMS', 'KO', 'CTSH', 'COIN', 'CL', 'CMCSA', 'CAG', 'COP', 'ED']
+2025-09-09 11:07:46,017 - ERROR - 
+19 Failed downloads:
+2025-09-09 11:07:46,017 - ERROR - ['CL', 'CAG', 'CTAS']: DNSError('Failed to perform, curl: (6) getaddrinfo() thread failed to start. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:07:46,017 - ERROR - ['COIN', 'CMG', 'C', 'CHD', 'CB', 'CI', 'KO', 'CFG', 'COP', 'CMS', 'CSCO', 'CLX', 'CME', 'ED', 'CMCSA']: OperationalError('unable to open database file')
+2025-09-09 11:07:46,017 - ERROR - ['CTSH']: SSLError('Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: /usr/local/anaconda3/lib/python3.11/site-packages/certifi/cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:07:51,023 - INFO - Processing chunk 7/26: ['STZ', 'CEG', 'COO', 'CPRT', 'GLW', 'CPAY', 'CTVA', 'CSGP', 'COST', 'CTRA', 'CRWD', 'CCI', 'CSX', 'CMI', 'CVS', 'DHR', 'DRI', 'DDOG', 'DVA', 'DAY']
+2025-09-09 11:07:51,068 - ERROR - 
+20 Failed downloads:
+2025-09-09 11:07:51,068 - ERROR - ['CPRT', 'STZ', 'DVA']: DNSError('Failed to perform, curl: (6) getaddrinfo() thread failed to start. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:07:51,069 - ERROR - ['CRWD', 'CCI', 'DRI', 'CVS', 'CPAY', 'CTRA', 'CMI', 'DHR', 'GLW', 'CSX', 'COST', 'CTVA', 'COO', 'DDOG', 'DAY']: OperationalError('unable to open database file')
+2025-09-09 11:07:51,069 - ERROR - ['CSGP', 'CEG']: DNSError('Failed to perform, curl: (6) Could not resolve host: query2.finance.yahoo.com. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:07:56,079 - INFO - Processing chunk 8/26: ['DECK', 'DE', 'DELL', 'DAL', 'DVN', 'DXCM', 'FANG', 'DLR', 'DG', 'DLTR', 'D', 'DPZ', 'DASH', 'DOV', 'DOW', 'DHI', 'DTE', 'DUK', 'DD', 'EMN']
+2025-09-09 11:07:56,189 - ERROR - 
+20 Failed downloads:
+2025-09-09 11:07:56,189 - ERROR - ['DOW', 'DVN']: DNSError('Failed to perform, curl: (6) Could not resolve host: query2.finance.yahoo.com. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:07:56,189 - ERROR - ['DOV', 'DHI', 'DTE', 'DECK', 'DASH', 'DPZ', 'DG', 'FANG', 'DUK', 'DE']: DNSError('Failed to perform, curl: (6) getaddrinfo() thread failed to start. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:07:56,189 - ERROR - ['DELL', 'DLR', 'DXCM', 'DD', 'EMN', 'D', 'DAL']: OperationalError('unable to open database file')
+2025-09-09 11:07:56,189 - ERROR - ['DLTR']: SSLError('Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: /usr/local/anaconda3/lib/python3.11/site-packages/certifi/cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:08:01,193 - INFO - Processing chunk 9/26: ['ETN', 'EBAY', 'ECL', 'EIX', 'EW', 'EA', 'ELV', 'EME', 'EMR', 'ETR', 'EOG', 'EPAM', 'EQT', 'EFX', 'EQIX', 'EQR', 'ERIE', 'ESS', 'EL', 'EG']
+2025-09-09 11:08:01,236 - ERROR - 
+20 Failed downloads:
+2025-09-09 11:08:01,236 - ERROR - ['EL', 'EG', 'EBAY', 'EQT', 'EPAM', 'EQR', 'ERIE', 'EMR']: DNSError('Failed to perform, curl: (6) getaddrinfo() thread failed to start. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:08:01,236 - ERROR - ['ELV', 'EOG', 'EA', 'EME', 'ESS', 'EIX', 'ECL', 'EQIX', 'EW', 'ETN', 'ETR', 'EFX']: OperationalError('unable to open database file')
+2025-09-09 11:08:06,246 - INFO - Processing chunk 10/26: ['EVRG', 'ES', 'EXC', 'EXE', 'EXPE', 'EXPD', 'EXR', 'XOM', 'FFIV', 'FDS', 'FICO', 'FAST', 'FRT', 'FDX', 'FIS', 'FITB', 'FSLR', 'FE', 'FI', 'F']
+2025-09-09 11:08:06,316 - ERROR - 
+20 Failed downloads:
+2025-09-09 11:08:06,316 - ERROR - ['F', 'FICO', 'FI', 'FSLR', 'FIS', 'EXPD', 'FITB', 'EVRG', 'XOM', 'EXR', 'FDS', 'FFIV', 'FE', 'FDX', 'ES', 'EXC', 'FAST']: OperationalError('unable to open database file')
+2025-09-09 11:08:06,316 - ERROR - ['EXPE', 'EXE']: DNSError('Failed to perform, curl: (6) getaddrinfo() thread failed to start. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:08:06,316 - ERROR - ['FRT']: DNSError('Failed to perform, curl: (6) Could not resolve host: query2.finance.yahoo.com. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:08:11,326 - INFO - Processing chunk 11/26: ['FTNT', 'FTV', 'FOXA', 'FOX', 'BEN', 'FCX', 'GRMN', 'IT', 'GE', 'GEHC', 'GEV', 'GEN', 'GNRC', 'GD', 'GIS', 'GM', 'GPC', 'GILD', 'GPN', 'GL']
+2025-09-09 11:08:11,767 - ERROR - 
+18 Failed downloads:
+2025-09-09 11:08:11,767 - ERROR - ['GPN', 'GILD', 'FOX', 'IT', 'FTNT']: DNSError('Failed to perform, curl: (6) Could not resolve host: query2.finance.yahoo.com. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:08:11,767 - ERROR - ['GIS', 'GEV', 'GE', 'FOXA', 'GEN']: DNSError('Failed to perform, curl: (6) getaddrinfo() thread failed to start. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:08:11,767 - ERROR - ['GRMN', 'GPC', 'GEHC', 'FCX', 'BEN', 'GM']: OperationalError('unable to open database file')
+2025-09-09 11:08:11,767 - ERROR - ['FTV', 'GD']: SSLError('Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: /usr/local/anaconda3/lib/python3.11/site-packages/certifi/cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:08:16,783 - INFO - Processing chunk 12/26: ['GDDY', 'GS', 'HAL', 'HIG', 'HAS', 'HCA', 'DOC', 'HSIC', 'HSY', 'HPE', 'HLT', 'HOLX', 'HD', 'HON', 'HRL', 'HST', 'HWM', 'HPQ', 'HUBB', 'HUM']
+2025-09-09 11:08:17,165 - ERROR - 
+19 Failed downloads:
+2025-09-09 11:08:17,165 - ERROR - ['GS']: DNSError('Failed to perform, curl: (6) Could not resolve host: query2.finance.yahoo.com. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:08:17,166 - ERROR - ['DOC', 'HWM']: DNSError('Failed to perform, curl: (6) getaddrinfo() thread failed to start. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:08:17,166 - ERROR - ['HIG', 'HSIC', 'HOLX', 'HUM', 'GDDY', 'HCA', 'HST', 'HAL', 'HPE', 'HD', 'HSY', 'HLT', 'HRL', 'HPQ', 'HUBB']: OperationalError('unable to open database file')
+2025-09-09 11:08:17,166 - ERROR - ['HAS']: SSLError('Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: /usr/local/anaconda3/lib/python3.11/site-packages/certifi/cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:08:22,175 - INFO - Processing chunk 13/26: ['HBAN', 'HII', 'IBM', 'IEX', 'IDXX', 'ITW', 'INCY', 'IR', 'PODD', 'INTC', 'IBKR', 'ICE', 'IFF', 'IP', 'IPG', 'INTU', 'ISRG', 'IVZ', 'INVH', 'IQV']
+2025-09-09 11:08:22,224 - ERROR - 
+20 Failed downloads:
+2025-09-09 11:08:22,224 - ERROR - ['IDXX', 'IP', 'IPG', 'INTC', 'HBAN', 'IQV', 'IEX', 'INTU']: DNSError('Failed to perform, curl: (6) getaddrinfo() thread failed to start. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:08:22,224 - ERROR - ['IVZ', 'IBM', 'IR', 'ITW', 'ISRG', 'IFF', 'INVH', 'ICE', 'PODD', 'INCY', 'IBKR']: OperationalError('unable to open database file')
+2025-09-09 11:08:22,224 - ERROR - ['HII']: DNSError('Failed to perform, curl: (6) Could not resolve host: query2.finance.yahoo.com. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:08:27,234 - INFO - Processing chunk 14/26: ['IRM', 'JBHT', 'JBL', 'JKHY', 'J', 'JNJ', 'JCI', 'JPM', 'K', 'KVUE', 'KDP', 'KEY', 'KEYS', 'KMB', 'KIM', 'KMI', 'KKR', 'KLAC', 'KHC', 'KR']
+2025-09-09 11:08:27,623 - ERROR - 
+19 Failed downloads:
+2025-09-09 11:08:27,623 - ERROR - ['KHC', 'KKR', 'JBL', 'JNJ', 'JPM', 'JKHY', 'KMB', 'IRM', 'KEYS']: OperationalError('unable to open database file')
+2025-09-09 11:08:27,623 - ERROR - ['J', 'K', 'KLAC', 'KIM', 'KEY', 'JCI', 'KVUE', 'KMI', 'JBHT']: DNSError('Failed to perform, curl: (6) getaddrinfo() thread failed to start. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:08:27,623 - ERROR - ['KDP']: SSLError('Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: /usr/local/anaconda3/lib/python3.11/site-packages/certifi/cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:08:32,636 - INFO - Processing chunk 15/26: ['LHX', 'LH', 'LRCX', 'LW', 'LVS', 'LDOS', 'LEN', 'LII', 'LLY', 'LIN', 'LYV', 'LKQ', 'LMT', 'L', 'LOW', 'LULU', 'LYB', 'MTB', 'MPC', 'MAR']
+2025-09-09 11:08:32,752 - ERROR - 
+20 Failed downloads:
+2025-09-09 11:08:32,752 - ERROR - ['LW', 'LEN', 'LKQ', 'MAR', 'LLY', 'LULU']: DNSError('Failed to perform, curl: (6) getaddrinfo() thread failed to start. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:08:32,752 - ERROR - ['LHX', 'MTB', 'LRCX', 'LMT', 'LII', 'LYV', 'LYB', 'LIN', 'L', 'LOW', 'LH', 'LDOS', 'MPC']: OperationalError('unable to open database file')
+2025-09-09 11:08:32,752 - ERROR - ['LVS']: SSLError('Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: /usr/local/anaconda3/lib/python3.11/site-packages/certifi/cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:08:37,759 - INFO - Processing chunk 16/26: ['MMC', 'MLM', 'MAS', 'MA', 'MTCH', 'MKC', 'MCD', 'MCK', 'MDT', 'MRK', 'META', 'MET', 'MTD', 'MGM', 'MCHP', 'MU', 'MSFT', 'MAA', 'MRNA', 'MHK']
+2025-09-09 11:08:38,211 - ERROR - 
+18 Failed downloads:
+2025-09-09 11:08:38,212 - ERROR - ['MGM', 'MET', 'MRK', 'MRNA', 'MDT', 'MCK', 'MKC', 'MCHP', 'MAS', 'MAA', 'MSFT', 'META', 'MMC', 'MLM', 'MTCH', 'MA']: OperationalError('unable to open database file')
+2025-09-09 11:08:38,212 - ERROR - ['MCD']: DNSError('Failed to perform, curl: (6) getaddrinfo() thread failed to start. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:08:38,212 - ERROR - ['MTD']: DNSError('Failed to perform, curl: (6) Could not resolve host: query2.finance.yahoo.com. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:08:43,230 - INFO - Processing chunk 17/26: ['MOH', 'TAP', 'MDLZ', 'MPWR', 'MNST', 'MCO', 'MS', 'MOS', 'MSI', 'MSCI', 'NDAQ', 'NTAP', 'NFLX', 'NEM', 'NWSA', 'NWS', 'NEE', 'NKE', 'NI', 'NDSN']
+2025-09-09 11:08:43,618 - ERROR - 
+19 Failed downloads:
+2025-09-09 11:08:43,618 - ERROR - ['MOS']: DNSError('Failed to perform, curl: (6) Could not resolve host: query2.finance.yahoo.com. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:08:43,618 - ERROR - ['NTAP', 'MOH', 'NWS']: DNSError('Failed to perform, curl: (6) getaddrinfo() thread failed to start. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:08:43,618 - ERROR - ['NKE', 'MDLZ', 'NI', 'NEM', 'MSCI', 'NFLX', 'MCO', 'MPWR', 'MS', 'NEE', 'NWSA', 'MSI', 'MNST', 'NDSN']: OperationalError('unable to open database file')
+2025-09-09 11:08:43,618 - ERROR - ['TAP']: SSLError('Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: /usr/local/anaconda3/lib/python3.11/site-packages/certifi/cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:08:48,625 - INFO - Processing chunk 18/26: ['NSC', 'NTRS', 'NOC', 'NCLH', 'NRG', 'NUE', 'NVDA', 'NVR', 'NXPI', 'ORLY', 'OXY', 'ODFL', 'OMC', 'ON', 'OKE', 'ORCL', 'OTIS', 'PCAR', 'PKG', 'PLTR']
+2025-09-09 11:08:48,672 - ERROR - 
+20 Failed downloads:
+2025-09-09 11:08:48,672 - ERROR - ['OMC']: DNSError('Failed to perform, curl: (6) Could not resolve host: query2.finance.yahoo.com. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:08:48,672 - ERROR - ['PKG', 'NUE', 'ON', 'OTIS', 'OKE']: DNSError('Failed to perform, curl: (6) getaddrinfo() thread failed to start. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:08:48,672 - ERROR - ['NOC', 'NVR', 'NCLH', 'PCAR', 'ORLY', 'OXY', 'PLTR', 'NRG', 'NSC', 'NVDA', 'ODFL', 'NTRS', 'ORCL', 'NXPI']: OperationalError('unable to open database file')
+2025-09-09 11:08:53,675 - INFO - Processing chunk 19/26: ['PANW', 'PSKY', 'PH', 'PAYX', 'PAYC', 'PYPL', 'PNR', 'PEP', 'PFE', 'PCG', 'PM', 'PSX', 'PNW', 'PNC', 'POOL', 'PPG', 'PPL', 'PFG', 'PG', 'PGR']
+2025-09-09 11:08:53,821 - ERROR - 
+20 Failed downloads:
+2025-09-09 11:08:53,821 - ERROR - ['PPL', 'PNR', 'PANW', 'PYPL', 'PPG', 'PEP', 'PSX', 'PFE']: OperationalError('unable to open database file')
+2025-09-09 11:08:53,821 - ERROR - ['PCG', 'PFG', 'PNW', 'PAYC', 'PSKY', 'PG', 'PAYX']: DNSError('Failed to perform, curl: (6) getaddrinfo() thread failed to start. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:08:53,821 - ERROR - ['PH', 'PNC', 'PGR', 'POOL']: DNSError('Failed to perform, curl: (6) Could not resolve host: query2.finance.yahoo.com. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:08:53,821 - ERROR - ['PM']: SSLError('Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: /usr/local/anaconda3/lib/python3.11/site-packages/certifi/cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:08:58,831 - INFO - Processing chunk 20/26: ['PLD', 'PRU', 'PEG', 'PTC', 'PSA', 'PHM', 'PWR', 'QCOM', 'DGX', 'RL', 'RJF', 'RTX', 'O', 'REG', 'REGN', 'RF', 'RSG', 'RMD', 'RVTY', 'HOOD']
+2025-09-09 11:08:59,223 - ERROR - 
+19 Failed downloads:
+2025-09-09 11:08:59,223 - ERROR - ['O', 'RJF', 'RVTY', 'RL', 'PWR', 'RSG', 'RF', 'PTC', 'REGN', 'QCOM']: OperationalError('unable to open database file')
+2025-09-09 11:08:59,223 - ERROR - ['PEG', 'HOOD', 'PLD', 'REG', 'PSA', 'DGX', 'PHM', 'RTX']: DNSError('Failed to perform, curl: (6) getaddrinfo() thread failed to start. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:08:59,223 - ERROR - ['PRU']: SSLError('Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: /usr/local/anaconda3/lib/python3.11/site-packages/certifi/cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:09:04,237 - INFO - Processing chunk 21/26: ['ROK', 'ROL', 'ROP', 'ROST', 'RCL', 'SPGI', 'CRM', 'SBAC', 'SLB', 'STX', 'SRE', 'NOW', 'SHW', 'SPG', 'SWKS', 'SJM', 'SW', 'SNA', 'SOLV', 'SO']
+2025-09-09 11:09:04,343 - ERROR - 
+20 Failed downloads:
+2025-09-09 11:09:04,343 - ERROR - ['SO']: DNSError('Failed to perform, curl: (6) Could not resolve host: query2.finance.yahoo.com. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:09:04,343 - ERROR - ['SPG', 'ROP', 'RCL', 'CRM', 'SLB', 'ROST', 'SHW']: DNSError('Failed to perform, curl: (6) getaddrinfo() thread failed to start. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:09:04,343 - ERROR - ['SBAC', 'NOW', 'SPGI', 'SW', 'SNA', 'ROL', 'SJM', 'SOLV', 'ROK', 'SRE', 'SWKS']: OperationalError('unable to open database file')
+2025-09-09 11:09:04,343 - ERROR - ['STX']: SSLError('Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: /usr/local/anaconda3/lib/python3.11/site-packages/certifi/cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:09:09,354 - INFO - Processing chunk 22/26: ['LUV', 'SWK', 'SBUX', 'STT', 'STLD', 'STE', 'SYK', 'SMCI', 'SYF', 'SNPS', 'SYY', 'TMUS', 'TROW', 'TTWO', 'TPR', 'TRGP', 'TGT', 'TEL', 'TDY', 'TER']
+2025-09-09 11:09:09,396 - ERROR - 
+20 Failed downloads:
+2025-09-09 11:09:09,396 - ERROR - ['TPR', 'LUV', 'SYK', 'STLD', 'TMUS', 'TER', 'TTWO', 'SBUX', 'TRGP', 'TGT', 'SWK', 'TROW']: OperationalError('unable to open database file')
+2025-09-09 11:09:09,396 - ERROR - ['TDY', 'SNPS', 'TEL', 'STE', 'STT', 'SMCI', 'SYF']: DNSError('Failed to perform, curl: (6) getaddrinfo() thread failed to start. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:09:09,396 - ERROR - ['SYY']: DNSError('Failed to perform, curl: (6) Could not resolve host: query2.finance.yahoo.com. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:09:14,400 - INFO - Processing chunk 23/26: ['TSLA', 'TXN', 'TPL', 'TXT', 'TMO', 'TJX', 'TKO', 'TTD', 'TSCO', 'TT', 'TDG', 'TRV', 'TRMB', 'TFC', 'TYL', 'TSN', 'USB', 'UBER', 'UDR', 'ULTA']
+2025-09-09 11:09:14,508 - ERROR - 
+20 Failed downloads:
+2025-09-09 11:09:14,508 - ERROR - ['TFC', 'TYL', 'UBER', 'TSN']: DNSError('Failed to perform, curl: (6) Could not resolve host: query2.finance.yahoo.com. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:09:14,508 - ERROR - ['TT', 'TRV', 'TSCO', 'TRMB', 'TPL', 'UDR', 'TKO', 'TXT']: DNSError('Failed to perform, curl: (6) getaddrinfo() thread failed to start. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:09:14,508 - ERROR - ['TTD', 'USB', 'ULTA', 'TMO', 'TSLA', 'TJX', 'TDG']: OperationalError('unable to open database file')
+2025-09-09 11:09:14,508 - ERROR - ['TXN']: SSLError('Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: /usr/local/anaconda3/lib/python3.11/site-packages/certifi/cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:09:19,520 - INFO - Processing chunk 24/26: ['UNP', 'UAL', 'UPS', 'URI', 'UNH', 'UHS', 'VLO', 'VTR', 'VLTO', 'VRSN', 'VRSK', 'VZ', 'VRTX', 'VTRS', 'VICI', 'V', 'VST', 'VMC', 'WRB', 'GWW']
+2025-09-09 11:09:19,562 - ERROR - 
+20 Failed downloads:
+2025-09-09 11:09:19,562 - ERROR - ['UNH', 'WRB', 'UNP', 'UPS', 'VTR']: DNSError('Failed to perform, curl: (6) getaddrinfo() thread failed to start. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:09:19,562 - ERROR - ['VLO', 'V', 'VRTX', 'VICI', 'URI', 'GWW', 'VTRS', 'UHS', 'VST', 'VLTO', 'VZ', 'VRSK', 'VMC', 'VRSN', 'UAL']: OperationalError('unable to open database file')
+2025-09-09 11:09:24,570 - INFO - Processing chunk 25/26: ['WAB', 'WMT', 'DIS', 'WBD', 'WM', 'WAT', 'WEC', 'WFC', 'WELL', 'WST', 'WDC', 'WY', 'WSM', 'WMB', 'WTW', 'WDAY', 'WYNN', 'XEL', 'XYL', 'YUM']
+2025-09-09 11:09:24,701 - ERROR - 
+20 Failed downloads:
+2025-09-09 11:09:24,701 - ERROR - ['WFC', 'WEC', 'WMT', 'WST', 'XYL', 'YUM', 'WMB', 'DIS', 'WAB', 'WDAY', 'WY', 'XEL']: OperationalError('unable to open database file')
+2025-09-09 11:09:24,701 - ERROR - ['WYNN']: DNSError('Failed to perform, curl: (6) Could not resolve host: query2.finance.yahoo.com. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:09:24,701 - ERROR - ['WDC', 'WELL', 'WAT', 'WBD', 'WSM', 'WTW']: DNSError('Failed to perform, curl: (6) getaddrinfo() thread failed to start. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:09:24,701 - ERROR - ['WM']: SSLError('Failed to perform, curl: (77) error setting certificate verify locations:  CAfile: /usr/local/anaconda3/lib/python3.11/site-packages/certifi/cacert.pem CApath: none. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:09:29,714 - INFO - Processing chunk 26/26: ['ZBRA', 'ZBH', 'ZTS', 'SPY']
+2025-09-09 11:09:30,173 - ERROR - 
+2 Failed downloads:
+2025-09-09 11:09:30,173 - ERROR - ['ZBRA', 'ZBH']: DNSError('Failed to perform, curl: (6) getaddrinfo() thread failed to start. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.')
+2025-09-09 11:09:35,268 - INFO - Price data updated and cached for adjusted period (end_date: 2025-09-08).
+2025-09-09 11:09:35,776 - INFO - Starting to add labels for top market caps...
+2025-09-09 11:09:35,985 - INFO - Finished adding labels for top market caps.
+2025-09-09 11:09:51,935 - INFO - Interactive chart saved as sp500_bubble_chart_1d_2025-09-08.html
+2025-09-09 11:15:54,148 - INFO - Starting create_bubble_chart...
+2025-09-09 11:15:54,149 - INFO - Starting to get S&P 500 tickers...
+2025-09-09 11:15:54,149 - INFO - Loading tickers from cache: sp500_tickers.pkl
+2025-09-09 11:15:54,150 - INFO - Starting to get market caps...
+2025-09-09 11:15:54,150 - INFO - Loading market caps from cache: market_caps.pkl
+2025-09-09 11:15:54,152 - INFO - Loading trading days from cache: trading_days_2025.pkl
+2025-09-09 11:15:54,152 - INFO - Downloading price data for period 2025-09-08 to 2025-09-08 with interval 1m
+2025-09-09 11:15:54,152 - INFO - Loading price data from cache: price_data_2025-09-08_2025-09-08_1m.pkl
+2025-09-09 11:15:54,624 - INFO - Starting to add labels for top market caps...
+2025-09-09 11:15:54,849 - INFO - Finished adding labels for top market caps.
+2025-09-09 11:16:10,091 - INFO - Interactive chart saved as sp500_bubble_chart_1d_2025-09-08.html
+2025-09-09 11:24:36,393 - INFO - Starting create_bubble_chart...
+2025-09-09 11:24:36,393 - INFO - Starting to get S&P 500 tickers...
+2025-09-09 11:24:36,393 - INFO - Loading tickers from cache: sp500_tickers.pkl
+2025-09-09 11:24:36,394 - INFO - Starting to get market caps...
+2025-09-09 11:24:36,394 - INFO - Loading market caps from cache: market_caps.pkl
+2025-09-09 11:24:36,397 - INFO - Loading trading days from cache: trading_days_2025.pkl
+2025-09-09 11:24:36,397 - INFO - Downloading price data for period 2025-09-08 to 2025-09-08 with interval 1m
+2025-09-09 11:24:36,397 - ERROR - Error in create_bubble_chart: module 'yfinance.utils' has no attribute 'clear_cache'
+Traceback (most recent call last):
+  File "/Users/jaehwa/dev/spybubblechart/sp500_bubble_chart.py", line 284, in create_bubble_chart
+    data = download_data(tickers, start_date, end_date, interval)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/jaehwa/dev/spybubblechart/sp500_bubble_chart.py", line 169, in download_data
+    yf_utils.clear_cache()
+    ^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'yfinance.utils' has no attribute 'clear_cache'
+2025-09-09 11:31:00,581 - INFO - Starting create_bubble_chart...
+2025-09-09 11:31:00,581 - INFO - Starting to get S&P 500 tickers...
+2025-09-09 11:31:00,581 - INFO - Loading tickers from cache: sp500_tickers.pkl
+2025-09-09 11:31:00,582 - INFO - Starting to get market caps...
+2025-09-09 11:31:00,583 - INFO - Loading market caps from cache: market_caps.pkl
+2025-09-09 11:31:00,585 - INFO - Loading trading days from cache: trading_days_2025.pkl
+2025-09-09 11:31:00,585 - INFO - Downloading price data for period 2025-09-08 to 2025-09-08 with interval 1m
+2025-09-09 11:31:00,585 - INFO - yfinance cache directory not found, skipping clear.
+2025-09-09 11:31:00,607 - INFO - Loading trading days from cache: trading_days_2025.pkl
+2025-09-09 11:31:00,607 - INFO - Loading trading days from cache: trading_days_2025.pkl
+2025-09-09 11:31:00,607 - INFO - Adjusted start_date from 2025-09-08 to nearest trading day 2025-09-05 for 1d period
+2025-09-09 11:31:00,618 - INFO - Processing chunk 1/26: ['MMM', 'AOS', 'ABT', 'ABBV', 'ACN', 'ADBE', 'AMD', 'AES', 'AFL', 'A', 'APD', 'ABNB', 'AKAM', 'ALB', 'ARE', 'ALGN', 'ALLE', 'LNT', 'ALL', 'GOOGL']
+2025-09-09 11:31:00,618 - ERROR - Error in chunk 1 (retry 1/5): download() got an unexpected keyword argument 'verify'
+2025-09-09 11:31:10,627 - ERROR - Error in chunk 1 (retry 2/5): download() got an unexpected keyword argument 'verify'
+2025-09-09 11:31:30,634 - ERROR - Error in chunk 1 (retry 3/5): download() got an unexpected keyword argument 'verify'
+2025-09-09 11:32:00,640 - ERROR - Error in chunk 1 (retry 4/5): download() got an unexpected keyword argument 'verify'
+2025-09-09 11:32:40,649 - ERROR - Error in chunk 1 (retry 5/5): download() got an unexpected keyword argument 'verify'
+2025-09-09 11:33:30,658 - WARNING - Failed to download chunk 1 after 5 retries. Skipping...
+2025-09-09 11:33:35,667 - INFO - Processing chunk 2/26: ['GOOG', 'MO', 'AMZN', 'AMCR', 'AEE', 'AEP', 'AXP', 'AIG', 'AMT', 'AWK', 'AMP', 'AME', 'AMGN', 'APH', 'ADI', 'AON', 'APA', 'APP', 'APO', 'AAPL']
+2025-09-09 11:33:35,668 - ERROR - Error in chunk 2 (retry 1/5): download() got an unexpected keyword argument 'verify'
+2025-09-09 11:33:45,675 - ERROR - Error in chunk 2 (retry 2/5): download() got an unexpected keyword argument 'verify'
+2025-09-09 11:34:05,679 - ERROR - Error in chunk 2 (retry 3/5): download() got an unexpected keyword argument 'verify'
+2025-09-09 11:34:35,685 - ERROR - Error in chunk 2 (retry 4/5): download() got an unexpected keyword argument 'verify'
+2025-09-09 11:35:15,693 - ERROR - Error in chunk 2 (retry 5/5): download() got an unexpected keyword argument 'verify'
+2025-09-09 11:36:05,700 - WARNING - Failed to download chunk 2 after 5 retries. Skipping...
+2025-09-09 11:36:10,701 - INFO - Processing chunk 3/26: ['AMAT', 'APTV', 'ACGL', 'ADM', 'ANET', 'AJG', 'AIZ', 'T', 'ATO', 'ADSK', 'ADP', 'AZO', 'AVB', 'AVY', 'AXON', 'BKR', 'BALL', 'BAC', 'BAX', 'BDX']
+2025-09-09 11:36:10,701 - ERROR - Error in chunk 3 (retry 1/5): download() got an unexpected keyword argument 'verify'
+2025-09-09 11:36:20,709 - ERROR - Error in chunk 3 (retry 2/5): download() got an unexpected keyword argument 'verify'
+2025-09-09 11:36:40,713 - ERROR - Error in chunk 3 (retry 3/5): download() got an unexpected keyword argument 'verify'
+2025-09-09 11:37:10,716 - ERROR - Error in chunk 3 (retry 4/5): download() got an unexpected keyword argument 'verify'
+2025-09-09 11:37:50,723 - ERROR - Error in chunk 3 (retry 5/5): download() got an unexpected keyword argument 'verify'
+2025-09-09 11:38:40,731 - WARNING - Failed to download chunk 3 after 5 retries. Skipping...
+2025-09-09 12:22:39,059 - INFO - Starting create_bubble_chart...
+2025-09-09 12:22:39,059 - INFO - Starting to get S&P 500 tickers...
+2025-09-09 12:22:39,059 - INFO - Loading tickers from cache: sp500_tickers.pkl
+2025-09-09 12:22:39,060 - INFO - Starting to get market caps...
+2025-09-09 12:22:39,060 - INFO - Loading market caps from cache: market_caps.pkl
+2025-09-09 12:22:39,063 - INFO - Loading trading days from cache: trading_days_2025.pkl
+2025-09-09 12:22:39,063 - INFO - Downloading price data for period 2025-09-08 to 2025-09-08 with interval 1m
+2025-09-09 12:22:39,063 - INFO - yfinance cache directory not found, skipping clear.
+2025-09-09 12:22:39,085 - INFO - Loading trading days from cache: trading_days_2025.pkl
+2025-09-09 12:22:39,086 - INFO - Loading trading days from cache: trading_days_2025.pkl
+2025-09-09 12:22:39,086 - INFO - Adjusted start_date from 2025-09-08 to nearest trading day 2025-09-05 for 1d period
+2025-09-09 12:22:39,096 - INFO - Processing chunk 1/51: ['MMM', 'AOS', 'ABT', 'ABBV', 'ACN', 'ADBE', 'AMD', 'AES', 'AFL', 'A']
+2025-09-09 12:22:39,096 - ERROR - Error in chunk 1 (retry 1/5): Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+2025-09-09 12:22:49,105 - ERROR - Error in chunk 1 (retry 2/5): Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+2025-09-09 12:23:09,109 - ERROR - Error in chunk 1 (retry 3/5): Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+2025-09-09 12:23:39,112 - ERROR - Error in chunk 1 (retry 4/5): Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+2025-09-09 12:24:19,115 - ERROR - Error in chunk 1 (retry 5/5): Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+2025-09-09 12:25:09,117 - WARNING - Failed to download chunk 1 after 5 retries. Skipping...
+2025-09-09 12:25:11,122 - INFO - Processing chunk 2/51: ['APD', 'ABNB', 'AKAM', 'ALB', 'ARE', 'ALGN', 'ALLE', 'LNT', 'ALL', 'GOOGL']
+2025-09-09 12:25:11,122 - ERROR - Error in chunk 2 (retry 1/5): Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+2025-09-09 12:25:21,130 - ERROR - Error in chunk 2 (retry 2/5): Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+2025-09-09 12:25:41,136 - ERROR - Error in chunk 2 (retry 3/5): Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+2025-09-09 12:26:11,144 - ERROR - Error in chunk 2 (retry 4/5): Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+2025-09-09 12:26:51,150 - ERROR - Error in chunk 2 (retry 5/5): Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+2025-09-09 12:27:41,152 - WARNING - Failed to download chunk 2 after 5 retries. Skipping...
+2025-09-09 12:27:43,162 - INFO - Processing chunk 3/51: ['GOOG', 'MO', 'AMZN', 'AMCR', 'AEE', 'AEP', 'AXP', 'AIG', 'AMT', 'AWK']
+2025-09-09 12:27:43,162 - ERROR - Error in chunk 3 (retry 1/5): Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+2025-09-09 12:27:53,166 - ERROR - Error in chunk 3 (retry 2/5): Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+2025-09-09 12:28:13,171 - ERROR - Error in chunk 3 (retry 3/5): Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+2025-09-09 12:28:43,175 - ERROR - Error in chunk 3 (retry 4/5): Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+2025-09-09 12:29:23,181 - ERROR - Error in chunk 3 (retry 5/5): Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+2025-09-09 12:30:13,188 - WARNING - Failed to download chunk 3 after 5 retries. Skipping...
+2025-09-09 12:30:15,193 - INFO - Processing chunk 4/51: ['AMP', 'AME', 'AMGN', 'APH', 'ADI', 'AON', 'APA', 'APP', 'APO', 'AAPL']
+2025-09-09 12:30:15,193 - ERROR - Error in chunk 4 (retry 1/5): Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+2025-09-09 12:30:25,202 - ERROR - Error in chunk 4 (retry 2/5): Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+2025-09-09 12:30:45,211 - ERROR - Error in chunk 4 (retry 3/5): Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+2025-09-09 12:31:15,217 - ERROR - Error in chunk 4 (retry 4/5): Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+2025-09-09 12:31:55,222 - ERROR - Error in chunk 4 (retry 5/5): Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+2025-09-09 12:32:45,230 - WARNING - Failed to download chunk 4 after 5 retries. Skipping...
+2025-09-09 12:32:47,233 - INFO - Processing chunk 5/51: ['AMAT', 'APTV', 'ACGL', 'ADM', 'ANET', 'AJG', 'AIZ', 'T', 'ATO', 'ADSK']
+2025-09-09 12:32:47,233 - ERROR - Error in chunk 5 (retry 1/5): Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+2025-09-09 12:32:57,240 - ERROR - Error in chunk 5 (retry 2/5): Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+2025-09-09 12:33:17,248 - ERROR - Error in chunk 5 (retry 3/5): Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+2025-09-09 12:33:47,256 - ERROR - Error in chunk 5 (retry 4/5): Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+2025-09-09 12:34:27,263 - ERROR - Error in chunk 5 (retry 5/5): Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+2025-09-09 12:35:17,266 - WARNING - Failed to download chunk 5 after 5 retries. Skipping...
+2025-09-09 12:35:19,275 - INFO - Processing chunk 6/51: ['ADP', 'AZO', 'AVB', 'AVY', 'AXON', 'BKR', 'BALL', 'BAC', 'BAX', 'BDX']
+2025-09-09 12:35:19,275 - ERROR - Error in chunk 6 (retry 1/5): Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+2025-09-09 12:35:29,284 - ERROR - Error in chunk 6 (retry 2/5): Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+2025-09-09 12:35:49,286 - ERROR - Error in chunk 6 (retry 3/5): Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+2025-09-09 12:36:19,294 - ERROR - Error in chunk 6 (retry 4/5): Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+2025-09-09 12:36:59,301 - ERROR - Error in chunk 6 (retry 5/5): Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+2025-09-09 12:37:49,309 - WARNING - Failed to download chunk 6 after 5 retries. Skipping...
+2025-09-09 12:37:51,310 - INFO - Processing chunk 7/51: ['BRK.B', 'BBY', 'TECH', 'BIIB', 'BLK', 'BX', 'XYZ', 'BK', 'BA', 'BKNG']
+2025-09-09 12:37:51,310 - ERROR - Error in chunk 7 (retry 1/5): Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+2025-09-09 12:38:01,315 - ERROR - Error in chunk 7 (retry 2/5): Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+2025-09-09 12:38:21,318 - ERROR - Error in chunk 7 (retry 3/5): Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+2025-09-09 13:03:45,595 - INFO - Starting create_bubble_chart...
+2025-09-09 13:03:45,595 - INFO - Starting to get S&P 500 tickers...
+2025-09-09 13:03:45,595 - INFO - Loading tickers from cache: sp500_tickers.pkl
+2025-09-09 13:03:45,596 - INFO - Starting to get market caps...
+2025-09-09 13:03:45,596 - INFO - Loading market caps from cache: market_caps.pkl
+2025-09-09 13:03:45,600 - INFO - Loading trading days from cache: trading_days_2025.pkl
+2025-09-09 13:03:45,600 - INFO - Downloading price data for period 2025-09-08 to 2025-09-08 with interval 1m
+2025-09-09 13:03:45,600 - INFO - yfinance cache directory not found, skipping clear.
+2025-09-09 13:03:45,623 - INFO - Loading trading days from cache: trading_days_2025.pkl
+2025-09-09 13:03:45,624 - INFO - Loading trading days from cache: trading_days_2025.pkl
+2025-09-09 13:03:45,624 - INFO - Adjusted start_date from 2025-09-08 to nearest trading day 2025-09-05 for 1d period
+2025-09-09 13:03:45,634 - INFO - Processing chunk 1/51: ['MMM', 'AOS', 'ABT', 'ABBV', 'ACN', 'ADBE', 'AMD', 'AES', 'AFL', 'A']
+2025-09-09 13:03:45,635 - ERROR - Error in chunk 1 (retry 1/5): Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+2025-09-09 13:03:52,377 - INFO - Starting create_bubble_chart...
+2025-09-09 13:03:52,377 - INFO - Starting to get S&P 500 tickers...
+2025-09-09 13:03:52,377 - INFO - Loading tickers from cache: sp500_tickers.pkl
+2025-09-09 13:03:52,378 - INFO - Starting to get market caps...
+2025-09-09 13:03:52,378 - INFO - Loading market caps from cache: market_caps.pkl
+2025-09-09 13:03:52,380 - INFO - Loading trading days from cache: trading_days_2025.pkl
+2025-09-09 13:03:52,380 - INFO - Downloading price data for period 2025-09-08 to 2025-09-08 with interval 1m
+2025-09-09 13:03:52,381 - INFO - yfinance cache directory not found, skipping clear.
+2025-09-09 13:03:52,400 - INFO - Loading trading days from cache: trading_days_2025.pkl
+2025-09-09 13:03:52,400 - INFO - Loading trading days from cache: trading_days_2025.pkl
+2025-09-09 13:03:52,400 - INFO - Adjusted start_date from 2025-09-08 to nearest trading day 2025-09-05 for 1d period
+2025-09-09 13:03:52,409 - INFO - Processing chunk 1/51: ['MMM', 'AOS', 'ABT', 'ABBV', 'ACN', 'ADBE', 'AMD', 'AES', 'AFL', 'A']
+2025-09-09 13:03:52,409 - ERROR - Error in chunk 1 (retry 1/5): Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
+2025-09-09 13:36:56,100 - INFO - Starting create_bubble_chart...
+2025-09-09 13:36:56,100 - INFO - Starting to get S&P 500 tickers...
+2025-09-09 13:36:56,100 - INFO - Loading tickers from cache: sp500_tickers.pkl
+2025-09-09 13:36:56,101 - INFO - Starting to get market caps...
+2025-09-09 13:36:56,101 - INFO - Loading market caps from cache: market_caps.pkl
+2025-09-09 13:36:56,104 - INFO - Loading trading days from cache: trading_days_2025.pkl
+2025-09-09 13:36:56,104 - INFO - Downloading price data for period 2025-09-08 to 2025-09-08 with interval 1m
+2025-09-09 13:36:56,104 - INFO - yfinance cache directory not found, skipping clear.
+2025-09-09 13:36:56,126 - INFO - Loading trading days from cache: trading_days_2025.pkl
+2025-09-09 13:36:56,126 - INFO - Loading trading days from cache: trading_days_2025.pkl
+2025-09-09 13:36:56,126 - INFO - Adjusted start_date from 2025-09-08 to nearest trading day 2025-09-05 for 1d period
+2025-09-09 13:36:56,137 - INFO - Processing chunk 1/51: ['MMM', 'AOS', 'ABT', 'ABBV', 'ACN', 'ADBE', 'AMD', 'AES', 'AFL', 'A']
+2025-09-09 13:36:56,137 - ERROR - Error in chunk 1 (retry 1/5): Yahoo API requires curl_cffi session not <class 'requests.sessions.Session'>. Solution: stop setting session, let YF handle.
