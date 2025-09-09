@@ -97,7 +97,7 @@ python3 sp500_bubble_chart.py --period 1d --end_date 2025-09-06
 - **main**: argparse로 인자 파싱, create_bubble_chart 호출.
 
 ### 주요 로직 상세
-- Size 계산: `np.sqrt(MarketCap / min_market_cap) * 40` – 제곱근으로 비례성 유지하면서 과도한 차이 완화. clip으로 렌더링 제한.
+- Size 계산: `np.sqrt(MarketCap / min_market_cap) * 5` – 제곱근으로 비례성 유지하면서 과도한 차이 완화. clip으로 렌더링 제한.
 - jitter: `np.random.uniform(-0.4, 0.4)` – 섹터 내 버블 중첩 방지.
 - 라벨: MarketCap > 500e9인 종목만 표시 (top_mask).
 - 범례: cap_sizes에 따라 원형 shape 추가, 크기 비례 (sqrt 사용).
