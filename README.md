@@ -2,7 +2,7 @@
 
 S&P 500 지수 구성 종목의 주식 데이터를 기반으로 한 동적 버블 차트를 생성하는 Python 스크립트를 제공합니다. 버블 차트는 각 종목의 시가총액(MarketCap)에 비례한 버블 크기, 섹터별 위치 배치, 지정 기간 동안의 수익률(Return) 변화를 애니메이션으로 시각화합니다. SPY( S&P 500 ETF)를 기준으로 전체 시장 수익률도 표시하며, Plotly 라이브러리를 사용하여 인터랙티브 HTML 파일을 출력합니다. 이 도구는 금융 데이터 분석, 시장 트렌드 관찰, 또는 교육 목적으로 유용합니다.
 
-![sp500_bubble_chart](https://github.com/user-attachments/assets/f2d3aa77-54df-4b0c-a3e0-f99163f6465b.jpg)
+<img width="1561" height="836" alt="Image" src="https://github.com/user-attachments/assets/2389206b-9756-4275-900c-d2e525a50e2d" />
 
 코드의 주요 특징:
 - **캐싱 지원**: 티커 목록, market cap, 가격 데이터를 캐시 파일(.pkl)로 저장하여 반복 실행 시 다운로드 시간을 절약합니다. 동일 옵션으로 실행하면 기존 캐시를 사용합니다.
