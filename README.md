@@ -4,6 +4,7 @@ S&P 500 지수 구성 종목의 주식 데이터를 기반으로 한 동적 버�
 
 <img width="1561" height="836" alt="SPY Bubble Chart" src="https://github.com/user-attachments/assets/2389206b-9756-4275-900c-d2e525a50e2d" />
 
+
 코드의 주요 특징:
 - **캐싱 지원**: 티커 목록, market cap, 가격 데이터를 캐시 파일(.pkl)로 저장하여 반복 실행 시 다운로드 시간을 절약합니다. 동일 옵션으로 실행하면 기존 캐시를 사용합니다.
 - **청크 다운로드**: yfinance를 통해 대량 데이터를 안정적으로 가져오며, 오류 재시도(retries)와 청크 처리(chunksize=20)를 적용했습니다.
