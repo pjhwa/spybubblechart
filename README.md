@@ -120,7 +120,7 @@ Google Colab(Google의 무료 Jupyter Notebook 환경)에서 코드를 쉽게 �
    - `%run`은 Colab 매직 명령어로 스크립트 실행. 미래 날짜 빈 데이터 시 `--end_date 2024-09-12`로 변경 추천.
 
 5. 출력 확인 및 다운로드:
-   - Files 탭에서 `sp500_bubble_chart_*.html` 더블클릭 – 브라우저에서 차트 열기 (TSLA 별표 강조 확인).
+   - Files 탭에서 `sp500_bubble_chart_*.html` 더블클릭 – 브라우저에서 차트 열기 (TSLA 별표 강조 확인). html 파일은 /content/ 에 생성됨.
    - 다운로드: 파일 우클릭 > "Download". 로그 파일도 함께.
 
 **문제 해결**: 라이브러리 오류 시 런타임 재시작 (Runtime > Restart runtime) 후 재설치. 세션 종료 시 캐시 사라지니 Drive 사용 추천.
