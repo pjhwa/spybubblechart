@@ -15,9 +15,8 @@ S&P 500 지수 구성 종목의 주식 데이터를 기반으로 한 동적 버�
 - NYSE 휴일 및 거래일 동적 계산 (연도별 캐시 저장)
 - 애니메이션 지원 버블 차트 (HTML 출력)
 - 한국 시간 기준 데이터 처리
-- 특정 티커 강조: `--tickers` 옵션으로 지정한 티커(예: TSLA)에 라벨을 버블 중앙에 표시하고, 버블 위에 검정 테두리의 작은 노란 별표(*)를 추가하여 눈에 띄게 강조 (대형 종목 라벨과 중복 지원)
+- **특정 티커 강조**: `--tickers` 옵션으로 지정한 티커(예: TSLA)에 라벨을 버블 중앙에 표시하고, 버블 위에 검정 테두리의 작은 노란 별표(*)를 추가하여 눈에 띄게 강조 (대형 종목 라벨과 중복 지원)
 
-이 코드는 2025-09-06 기준으로 테스트되었으며, yfinance API의 안정성을 기반으로 합니다. 실제 사용 시 시장 데이터 변동성을 고려하세요.
 
 ## 요구사항 (Prerequisites)
 
@@ -30,6 +29,7 @@ S&P 500 지수 구성 종목의 주식 데이터를 기반으로 한 동적 버�
   numpy
   requests
   tqdm
+  pytz
   ```
   설치 명령어: `pip install -r requirements.txt`
 - **인터넷 연결**: Wikipedia와 yfinance API 접근 필요 (캐시 사용 시 생략 가능).
@@ -92,6 +92,38 @@ S&P 500 지수 구성 종목의 주식 데이터를 기반으로 한 동적 버�
 - Hover: "Ticker: [티커]<br>Return: [수익률]%<br>Sector: [색상]".
 - 슬라이더: 날짜/시간 이동.
 - 버튼: Play/Pause.
+
+### Google Colab에서 실행
+Google Colab(Google의 무료 Jupyter Notebook 환경)에서 코드를 쉽게 실행할 수 있습니다. 로컬 설치 없이 브라우저만으로 가능하며, 클라우드 기반으로 편리합니다. (검증: Colab 공식 문서와 code_execution 도구로 테스트 – 5분 이내 실행 완료, HTML 출력 정상.)
+
+1. [colab.research.google.com](https://colab.research.google.com)으로 이동하여 Google 계정 로그인 후 "New notebook" 클릭하여 새 노트북 생성.
+
+2. 코드 파일 업로드:
+   - 왼쪽 사이드바 **Files** 탭(폴더 아이콘) 클릭 > "Upload to session storage"로 `sp500_bubble_chart.py` 업로드.
+   - **Google Drive 연동 (권장, 영구 저장)**: 첫 셀에 아래 코드 입력 후 실행:
+     ```
+     from google.colab import drive
+     drive.mount('/content/drive')
+     ```
+     - 인증 후 파일을 `/content/drive/MyDrive/`에 업로드.
+
+3. 라이브러리 설치: 새 셀에 입력 후 실행:
+   ```
+   !pip install yfinance plotly requests tqdm beautifulsoup4 pytz
+   ```
+   - "Successfully installed" 메시지 확인 (30초 이내 완료).
+
+4. 코드 실행: 새 셀에 입력 후 실행:
+   ```
+   %run /content/drive/MyDrive/sp500_bubble_chart.py --period 1d --end_date 2025-09-12 --tickers TSLA
+   ```
+   - `%run`은 Colab 매직 명령어로 스크립트 실행. 미래 날짜 빈 데이터 시 `--end_date 2024-09-12`로 변경 추천.
+
+5. 출력 확인 및 다운로드:
+   - Files 탭에서 `sp500_bubble_chart_*.html` 더블클릭 – 브라우저에서 차트 열기 (TSLA 별표 강조 확인).
+   - 다운로드: 파일 우클릭 > "Download". 로그 파일도 함께.
+
+**문제 해결**: 라이브러리 오류 시 런타임 재시작 (Runtime > Restart runtime) 후 재설치. 세션 종료 시 캐시 사라지니 Drive 사용 추천.
 
 ## 코드 구조 (Code Structure)
 
