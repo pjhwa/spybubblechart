@@ -141,7 +141,7 @@ sector_colors = {
 }
 sector_positions = {sector: i for i, sector in enumerate(sector_colors.keys())}
 
-def create_bubble_chart(period='ytd', end_date=None):
+def create_bubble_chart(period='ytd', end_date=None, specified_tickers=None):
     try:
         logging.info("Starting create_bubble_chart...")
         if end_date is None:
@@ -182,9 +182,20 @@ def create_bubble_chart(period='ytd', end_date=None):
         
         logging.info("Starting to add labels for top market caps...")
         returns['Label'] = ''
+        # 개선: 'IsSpecified' 열을 루프 전에 vectorized로 초기화 (경고 방지, 정확성 향상)
+        specified_tickers_set = set(specified_tickers.split(',')) if specified_tickers else set()
+        if specified_tickers_set:
+            logging.info(f"Specified tickers for labels: {specified_tickers_set}")
+            returns['IsSpecified'] = returns['Ticker'].isin(specified_tickers_set)
+        else:
+            returns['IsSpecified'] = False
+            logging.info("No specified tickers, using default labels only.")
         grouped = returns.groupby('Date')
         for date, group in tqdm(grouped, desc="Adding labels for top market caps..."):
-            top_mask = group['MarketCap'] > 5e11
+            # 개선: 대형 종목 OR 지정 티커로 top_mask 확장
+            large_mask = group['MarketCap'] > 5e11
+            specified_mask = group['Ticker'].isin(specified_tickers_set)
+            top_mask = large_mask | specified_mask
             returns.loc[group.index[top_mask], 'Label'] = group.loc[top_mask, 'Ticker']
         logging.info("Finished adding labels for top market caps.")
         
@@ -195,18 +206,47 @@ def create_bubble_chart(period='ytd', end_date=None):
         spy_return_first = df_first[df_first['Ticker'] == 'SPY']['Return'].values[0]
         title_first = f"S&P 500 Bubble Chart ({period.upper()} Returns to {end_date}) | Date/Time: {first_date} | SPY {spy_return_first:.1f}%"
         
-        fig = go.Figure(data=[go.Scatter(
+        fig = go.Figure()
+        # 기본 버블 trace (markers only)
+        fig.add_trace(go.Scatter(
             x=df_first['x_pos'],
             y=df_first['Return'],
-            mode='markers+text',
+            mode='markers',
             marker=dict(size=df_first['Size'], color=df_first['Sector'].map(sector_colors), line=dict(width=1, color='black')),
-            text=df_first['Label'],
-            textposition='middle center',
-            textfont=dict(size=10),
             hovertext=df_first['Ticker'],
             hovertemplate='Ticker: %{hovertext}<br>Return: %{y:.1f}%<br>Sector: %{marker.color}',
             name='Bubble'
-        )])
+        ))
+        # 라벨 trace (text only, 중앙 위치)
+        fig.add_trace(go.Scatter(
+            x=df_first['x_pos'],
+            y=df_first['Return'],
+            mode='text',
+            text=df_first['Label'],
+            textposition='middle center',
+            textfont=dict(
+                size=df_first['IsSpecified'].map({True: 12, False: 10}).tolist(),
+                family=df_first['IsSpecified'].map({True: 'bold Arial', False: 'Arial'}).tolist(),
+                color=df_first['IsSpecified'].map({True: 'red', False: 'black'}).tolist()
+            ),
+            showlegend=False
+        ))
+        # 개선: 지정 티커를 위한 별표 trace (버블 위, 노란색 별 with 검정 테두리)
+        specified_mask_first = df_first['IsSpecified']
+        if specified_mask_first.any():
+            fig.add_trace(go.Scatter(
+                x=df_first['x_pos'][specified_mask_first],
+                y=df_first['Return'][specified_mask_first] + 2,  # 버블 위 오프셋
+                mode='markers',
+                marker=dict(
+                    symbol='star',  # 별표 심볼
+                    size=15,  # 작은 크기
+                    color='yellow',
+                    line=dict(color='black', width=1)  # 검정 테두리
+                ),
+                hovertext=df_first['Ticker'][specified_mask_first] + ' Highlighted',
+                showlegend=False
+            ))
         
         fig.update_layout(title=title_first,
                           xaxis={'tickvals': list(sector_positions.values()), 'ticktext': list(sector_positions.keys())},
@@ -220,18 +260,49 @@ def create_bubble_chart(period='ytd', end_date=None):
             spy_return = df_frame[df_frame['Ticker'] == 'SPY']['Return'].values[0]
             frame_title = f"S&P 500 Bubble Chart ({period.upper()} Returns to {end_date}) | Date/Time: {date} | SPY {spy_return:.1f}%"
             
-            frame = go.Frame(
-                data=[go.Scatter(
+            frame_data = [
+                go.Scatter(
                     x=df_frame['x_pos'],
                     y=df_frame['Return'],
-                    mode='markers+text',
+                    mode='markers',
                     marker=dict(size=df_frame['Size'], color=df_frame['Sector'].map(sector_colors), line=dict(width=1, color='black')),
-                    text=df_frame['Label'],
-                    textposition='middle center',
-                    textfont=dict(size=10),
                     hovertext=df_frame['Ticker'],
                     hovertemplate='Ticker: %{hovertext}<br>Return: %{y:.1f}%<br>Sector: %{marker.color}'
-                )],
+                )
+            ]
+            # 라벨 trace
+            frame_data.append(go.Scatter(
+                x=df_frame['x_pos'],
+                y=df_frame['Return'],
+                mode='text',
+                text=df_frame['Label'],
+                textposition='middle center',
+                textfont=dict(
+                    size=df_frame['IsSpecified'].map({True: 12, False: 10}).tolist(),
+                    family=df_frame['IsSpecified'].map({True: 'bold Arial', False: 'Arial'}).tolist(),
+                    color=df_frame['IsSpecified'].map({True: 'red', False: 'black'}).tolist()
+                ),
+                showlegend=False
+            ))
+            # 별표 trace
+            specified_mask_frame = df_frame['IsSpecified']
+            if specified_mask_frame.any():
+                frame_data.append(go.Scatter(
+                    x=df_frame['x_pos'][specified_mask_frame],
+                    y=df_frame['Return'][specified_mask_frame] + 2,
+                    mode='markers',
+                    marker=dict(
+                        symbol='star',
+                        size=15,
+                        color='yellow',
+                        line=dict(color='black', width=1)
+                    ),
+                    hovertext=df_frame['Ticker'][specified_mask_frame] + ' Highlighted',
+                    showlegend=False
+                ))
+            
+            frame = go.Frame(
+                data=frame_data,
                 layout=go.Layout(title=frame_title),
                 name=str(date)
             )
@@ -277,6 +348,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="S&P 500 Bubble Chart Generator")
     parser.add_argument('--period', type=str, default='ytd', choices=['ytd', '1d', '5d', '1mo', '1y'], help="Period for data (default: ytd)")
     parser.add_argument('--end_date', type=str, default=None, help="End date in YYYY-MM-DD (default: today)")
+    parser.add_argument('--tickers', type=str, default=None, help="Comma-separated tickers to highlight labels (e.g., AAPL,MSFT)")
     args = parser.parse_args()
     
-    create_bubble_chart(args.period, args.end_date)
+    create_bubble_chart(args.period, args.end_date, args.tickers)
