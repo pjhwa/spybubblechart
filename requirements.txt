@@ -4,4 +4,5 @@ plotly
 numpy
 requests
 tqdm
+beautifulsoup4
 pytz
