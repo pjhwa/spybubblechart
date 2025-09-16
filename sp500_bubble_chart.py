@@ -12,6 +12,7 @@ import pickle
 import os
 import logging
 import argparse
+import bisect  # closest date 매핑을 위한 bisect
 
 logging.basicConfig(
     level=logging.INFO,
@@ -139,7 +140,8 @@ sector_colors = {
     'Industrials': 'cyan', 'Consumer Staples': 'lime', 'Materials': 'brown',
     'Consumer Discretionary': 'pink', 'Real Estate': 'gray'
 }
-sector_positions = {sector: i for i, sector in enumerate(sector_colors.keys())}
+# 수정: 섹터 위치 간격 1.5로 확대 (균등 분배)
+sector_positions = {sector: i * 1.5 for i, sector in enumerate(sector_colors.keys())}
 
 def create_bubble_chart(period='ytd', end_date=None, specified_tickers=None):
     try:
@@ -162,27 +164,43 @@ def create_bubble_chart(period='ytd', end_date=None, specified_tickers=None):
             days = {'1d': 1, '5d': 5, '1mo': 30, '1y': 365}.get(period, 365)
             start_date = (datetime.strptime(end_date, '%Y-%m-%d') - timedelta(days=days)).strftime('%Y-%m-%d')
         
-        interval = '1m' if period == '1d' else '1d'
+        # 기간별 interval 동적 설정 (yfinance 제한 고려)
+        if period in ['1d', '5d']:
+            interval = '1m'
+        elif period == '1mo':
+            interval = '5m'
+        else:  # ytd, 1y
+            interval = '1h'
+        logging.info(f"Using interval: {interval} for period {period}")
+        
         data = download_data(tickers, start_date, end_date, interval)
         
         data.index = pd.to_datetime(data.index)
+        data.index.name = 'Date'  # 명시적 설정
         
         returns = ((data / data.iloc[0]) - 1) * 100
         returns = returns.reset_index().melt(id_vars='Date', var_name='Ticker', value_name='Return')
         returns = returns.merge(df[['Ticker', 'Sector', 'MarketCap']], on='Ticker')
         
-        df['jitter'] = np.random.uniform(-0.4, 0.4, len(df))
+        # 수정: Return clip to -10 ~ 10 for visualization
+        original_returns = returns['Return'].copy()  # hover용 원본 보존
+        returns['Return'] = np.clip(returns['Return'], -10, 10)
+        returns['OriginalReturn'] = original_returns  # 추가: hover용 열
+        logging.info("Clipped returns for extreme values to +/-10%.")
+        
+        # 수정: jitter 범위 좁혀 섹터 내 공간 확대 (-0.2 ~ 0.2)
+        df['jitter'] = np.random.uniform(-0.2, 0.2, len(df))
         returns = returns.merge(df[['Ticker', 'jitter']], on='Ticker')
         returns['x_pos'] = returns['Sector'].map(sector_positions) + returns['jitter']
         returns.loc[returns['Ticker'] == 'SPY', 'x_pos'] = -1
         
         min_market_cap = returns['MarketCap'].min()
-        returns['Size'] = np.sqrt(returns['MarketCap'] / min_market_cap) * 5 # bubble size
-        returns['Size'] = np.clip(returns['Size'], a_min=2, a_max=120)
+        # 수정: 버블 크기 *3으로 축소 (최대 72)
+        returns['Size'] = np.sqrt(returns['MarketCap'] / min_market_cap) * 3
+        returns['Size'] = np.clip(returns['Size'], a_min=2, a_max=72)
         
         logging.info("Starting to add labels for top market caps...")
-        returns['Label'] = ''
-        # 개선: 'IsSpecified' 열을 루프 전에 vectorized로 초기화 (경고 방지, 정확성 향상)
+        returns['Label'] = ''  # 초기화
         specified_tickers_set = set(specified_tickers.split(',')) if specified_tickers else set()
         if specified_tickers_set:
             logging.info(f"Specified tickers for labels: {specified_tickers_set}")
@@ -192,19 +210,54 @@ def create_bubble_chart(period='ytd', end_date=None, specified_tickers=None):
             logging.info("No specified tickers, using default labels only.")
         grouped = returns.groupby('Date')
         for date, group in tqdm(grouped, desc="Adding labels for top market caps..."):
-            # 개선: 대형 종목 OR 지정 티커로 top_mask 확장
             large_mask = group['MarketCap'] > 5e11
             specified_mask = group['Ticker'].isin(specified_tickers_set)
             top_mask = large_mask | specified_mask
-            returns.loc[group.index[top_mask], 'Label'] = group.loc[top_mask, 'Ticker']
+            # extreme return 라벨 추가
+            for idx in group[top_mask].index:
+                ticker = returns.loc[idx, 'Ticker']
+                actual_ret = returns.loc[idx, 'OriginalReturn']
+                label = ticker
+                if actual_ret > 10:
+                    label += " >10%"
+                elif actual_ret < -10:
+                    label += " <-10%"
+                returns.loc[idx, 'Label'] = label
         logging.info("Finished adding labels for top market caps.")
         
         dates = sorted(returns['Date'].unique())
         
-        first_date = dates[0]
-        df_first = returns[returns['Date'] == first_date]
+        # 600 프레임으로 1분 애니메이션 (100ms/frame)
+        target_frames = 600
+        frame_duration = 100
+        transition_duration = 0
+        if len(dates) >= target_frames:
+            indices = np.linspace(0, len(dates) - 1, target_frames, dtype=int)
+            sampled_dates = [dates[i] for i in indices]
+        else:
+            full_start = dates[0]
+            full_end = dates[-1]
+            step = (full_end - full_start) / (target_frames - 1)
+            sampled_dates = [full_start + timedelta(seconds=i * step.total_seconds()) for i in range(target_frames)]
+        logging.info(f"Sampled {len(sampled_dates)} frames from {len(dates)} original dates for 60s animation.")
+        
+        # first_date의 closest 매핑
+        first_date = sampled_dates[0]
+        idx_first = bisect.bisect_left(dates, first_date)
+        if idx_first == 0:
+            closest_first = dates[0]
+        elif idx_first == len(dates):
+            closest_first = dates[-1]
+        else:
+            before = dates[idx_first - 1]
+            after = dates[idx_first]
+            if (first_date - before) < (after - first_date):
+                closest_first = before
+            else:
+                closest_first = after
+        df_first = returns[returns['Date'] == closest_first]
         spy_return_first = df_first[df_first['Ticker'] == 'SPY']['Return'].values[0]
-        title_first = f"S&P 500 Bubble Chart ({period.upper()} Returns to {end_date}) | Date/Time: {first_date} | SPY {spy_return_first:.1f}%"
+        title_first = f"S&P 500 Bubble Chart ({period.upper()} Returns to {end_date}) | Date/Time: {closest_first} | SPY {spy_return_first:.1f}%"
         
         fig = go.Figure()
         # 기본 버블 trace (markers only)
@@ -214,7 +267,8 @@ def create_bubble_chart(period='ytd', end_date=None, specified_tickers=None):
             mode='markers',
             marker=dict(size=df_first['Size'], color=df_first['Sector'].map(sector_colors), line=dict(width=1, color='black')),
             hovertext=df_first['Ticker'],
-            hovertemplate='Ticker: %{hovertext}<br>Return: %{y:.1f}%<br>Sector: %{marker.color}',
+            customdata=df_first['OriginalReturn'],  # 추가: actual return
+            hovertemplate='Ticker: %{hovertext}<br>Clipped Return: %{y:.1f}%<br>Actual Return: %{customdata:.1f}%<br>Sector: %{marker.color}',  # 수정: customdata 사용
             name='Bubble'
         ))
         # 라벨 trace (text only, 중앙 위치)
@@ -231,7 +285,7 @@ def create_bubble_chart(period='ytd', end_date=None, specified_tickers=None):
             ),
             showlegend=False
         ))
-        # 개선: 지정 티커를 위한 별표 trace (버블 위, 노란색 별 with 검정 테두리)
+        # 지정 티커를 위한 별표 trace (버블 위, 노란색 별 with 검정 테두리)
         specified_mask_first = df_first['IsSpecified']
         if specified_mask_first.any():
             fig.add_trace(go.Scatter(
@@ -248,17 +302,34 @@ def create_bubble_chart(period='ytd', end_date=None, specified_tickers=None):
                 showlegend=False
             ))
         
+        # 수정: xaxis_range 확대 (섹터 간격 1.5 기준)
+        max_x = len(sector_positions) * 1.5 + 2
         fig.update_layout(title=title_first,
                           xaxis={'tickvals': list(sector_positions.values()), 'ticktext': list(sector_positions.keys())},
-                          xaxis_range=[-2, len(sector_positions)],
-                          yaxis_range=[returns['Return'].min() - 5, returns['Return'].max() + 5],
-                          transition={'duration': 300})
+                          xaxis_range=[-2, max_x],
+                          yaxis_range=[-10, 10],  # ±10% 최상단/최하단
+                          transition={'duration': transition_duration})
+        
+        # 수정: 제한선(hline) 완전 제거
         
         frames = []
-        for date in dates:
-            df_frame = returns[returns['Date'] == date]
+        for date in sampled_dates:
+            # closest original date 찾기 (bisect로 효율적)
+            idx = bisect.bisect_left(dates, date)
+            if idx == 0:
+                closest_date = dates[0]
+            elif idx == len(dates):
+                closest_date = dates[-1]
+            else:
+                before = dates[idx - 1]
+                after = dates[idx]
+                if (date - before) < (after - date):
+                    closest_date = before
+                else:
+                    closest_date = after
+            df_frame = returns[returns['Date'] == closest_date]
             spy_return = df_frame[df_frame['Ticker'] == 'SPY']['Return'].values[0]
-            frame_title = f"S&P 500 Bubble Chart ({period.upper()} Returns to {end_date}) | Date/Time: {date} | SPY {spy_return:.1f}%"
+            frame_title = f"S&P 500 Bubble Chart ({period.upper()} Returns to {end_date}) | Date/Time: {closest_date} | SPY {spy_return:.1f}%"
             
             frame_data = [
                 go.Scatter(
@@ -267,7 +338,8 @@ def create_bubble_chart(period='ytd', end_date=None, specified_tickers=None):
                     mode='markers',
                     marker=dict(size=df_frame['Size'], color=df_frame['Sector'].map(sector_colors), line=dict(width=1, color='black')),
                     hovertext=df_frame['Ticker'],
-                    hovertemplate='Ticker: %{hovertext}<br>Return: %{y:.1f}%<br>Sector: %{marker.color}'
+                    customdata=df_frame['OriginalReturn'],  # 추가
+                    hovertemplate='Ticker: %{hovertext}<br>Clipped Return: %{y:.1f}%<br>Actual Return: %{customdata:.1f}%<br>Sector: %{marker.color}'  # 수정
                 )
             ]
             # 라벨 trace
@@ -310,32 +382,34 @@ def create_bubble_chart(period='ytd', end_date=None, specified_tickers=None):
         
         fig.frames = frames
         
+        # 슬라이더 steps를 sampled_dates로, 100ms/0ms 맞춤
         sliders = [dict(
-            steps=[dict(method='animate', args=[[str(date)], dict(mode='immediate', frame=dict(duration=300, redraw=True), transition=dict(duration=300))], label=str(date)) for date in dates],
-            transition=dict(duration=300),
+            steps=[dict(method='animate', args=[[str(date)], dict(mode='immediate', frame=dict(duration=frame_duration, redraw=True), transition=dict(duration=transition_duration))], label=str(date)) for date in sampled_dates],
+            transition=dict(duration=transition_duration),
             currentvalue=dict(font=dict(size=12), prefix='Date/Time: ', visible=True),
             len=1.0
         )]
         
         fig.update_layout(sliders=sliders,
                           updatemenus=[dict(type='buttons', showactive=False,
-                                            buttons=[dict(label='Play', method='animate', args=[None, dict(frame=dict(duration=300, redraw=True), transition=dict(duration=300), fromcurrent=True)]),
+                                            buttons=[dict(label='Play', method='animate', args=[None, dict(frame=dict(duration=frame_duration, redraw=True), transition=dict(duration=transition_duration), fromcurrent=True)]),
                                                      dict(label='Pause', method='animate', args=[[None], dict(frame=dict(duration=0, redraw=False), mode='immediate', transition=dict(duration=0))])])])
         
         cap_sizes = [3e12, 1e12, 5e11]
         cap_labels = ['3000Bn', '1000Bn', '500Bn']
+        # 수정: Market Cap 범례 위치를 새로운 x 범위에 맞춤 (max_x + i*1.5)
         for i, cap in enumerate(cap_sizes):
             radius = np.sqrt(cap / min_market_cap) * 40 / 2
             fig.add_shape(type='circle', 
                           xref='x', yref='y',
-                          x0=len(sector_positions) + i*1 - radius/100,
-                          x1=len(sector_positions) + i*1 + radius/100,
-                          y0=returns['Return'].max() + 15,
-                          y1=returns['Return'].max() + 15 + radius/50,
+                          x0=max_x + i*1.5 - radius/100,
+                          x1=max_x + i*1.5 + radius/100,
+                          y0=10 + 5,  # y max 10 기준
+                          y1=10 + 5 + radius/50,
                           fillcolor='gray', opacity=0.5, line_color='gray')
         fig.add_annotation(text='Market Cap: ' + ' '.join(cap_labels), 
-                           x=len(sector_positions) + 1, 
-                           y=returns['Return'].max() + 20, 
+                           x=max_x + 1.5, 
+                           y=10 + 10,  # 수정
                            showarrow=False, font_size=10)
         
         html_file = f'sp500_bubble_chart_{period}_{end_date}.html'
